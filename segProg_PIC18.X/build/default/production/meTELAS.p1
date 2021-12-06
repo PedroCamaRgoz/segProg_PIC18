@@ -1,0 +1,4401 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F3383 `(v ~T0 @X0 0 tf ]
+[v F3385 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F3388 `(v ~T0 @X0 0 tf3`uc`uc`*Cuc ]
+[v F3393 `(v ~T0 @X0 0 tf4`uc`uc`i`uc ]
+[v F3399 `(v ~T0 @X0 0 tf ]
+"7 ./IHM.h
+[; ;./IHM.h: 7: {
+[s S369 `*F3383 1 `*F3385 1 `*F3388 1 `*F3393 1 `*F3399 1 ]
+[n S369 . init print printpos printv clr ]
+"10 ./dispLCD4vias.h
+[; ;./dispLCD4vias.h: 10: void dispLCD_init( void );
+[v _dispLCD_init `(v ~T0 @X0 0 ef ]
+"14
+[; ;./dispLCD4vias.h: 14: void dispLCD_str( const char * str );
+[v _dispLCD_str `(v ~T0 @X0 0 ef1`*Cuc ]
+"11
+[; ;./dispLCD4vias.h: 11: void dispLCD( unsigned char lin, unsigned char col, const char * str );
+[v _dispLCD `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
+"12
+[; ;./dispLCD4vias.h: 12: void dispLCD_num( unsigned char lin, unsigned char col, int num, unsigned char tam );
+[v _dispLCD_num `(v ~T0 @X0 0 ef4`uc`uc`i`uc ]
+"13
+[; ;./dispLCD4vias.h: 13: void dispLCD_clr( void );
+[v _dispLCD_clr `(v ~T0 @X0 0 ef ]
+[v F3160 `(*v ~T0 @X0 0 tf2`*v`*v ]
+"5 ./me.h
+[; ;./me.h: 5: {
+[s S367 `*F3160 1 `*v 1 `*v 1 ]
+[n S367 fsmT func arg next ]
+"9 ./dispLCD4vias.h
+[; ;./dispLCD4vias.h: 9: void dispLCD_lincol( unsigned char lin, unsigned char col);
+[v _dispLCD_lincol `(v ~T0 @X0 0 ef2`uc`uc ]
+"8
+[; ;./dispLCD4vias.h: 8: void dispLCD_dataReg( unsigned char d );
+[v _dispLCD_dataReg `(v ~T0 @X0 0 ef1`uc ]
+"13 ./fifo.h
+[; ;./fifo.h: 13: char ler_atuador(char tecla);
+[v _ler_atuador `(uc ~T0 @X0 0 ef1`uc ]
+"13 ./meTELAS.h
+[; ;./meTELAS.h: 13: void * me_telas_logo( void * arg, void * next );
+[v _me_telas_logo `(*v ~T0 @X0 0 ef2`*v`*v ]
+"4 ./delay.h
+[; ;./delay.h: 4: void delay( unsigned int t );
+[v _delay `(v ~T0 @X0 0 ef1`ui ]
+"15 ./meTELAS.h
+[; ;./meTELAS.h: 15: void * me_telas_clean( void * arg, void * next );
+[v _me_telas_clean `(*v ~T0 @X0 0 ef2`*v`*v ]
+"33 ./timer1.h
+[; ;./timer1.h: 33: void setT1( unsigned long int c );
+[v _setT1 `(v ~T0 @X0 0 ef1`ul ]
+"16 ./meTELAS.h
+[; ;./meTELAS.h: 16: void * me_telas_menu( void * arg, void * next );
+[v _me_telas_menu `(*v ~T0 @X0 0 ef2`*v`*v ]
+"14
+[; ;./meTELAS.h: 14: void * me_telas_delay( void * arg, void * next );
+[v _me_telas_delay `(*v ~T0 @X0 0 ef2`*v`*v ]
+"34 ./timer1.h
+[; ;./timer1.h: 34: unsigned long int statusT1( void );
+[v _statusT1 `(ul ~T0 @X0 0 ef ]
+"17 ./meTELAS.h
+[; ;./meTELAS.h: 17: void * me_telas_menu_tecla( void * arg, void * next );
+[v _me_telas_menu_tecla `(*v ~T0 @X0 0 ef2`*v`*v ]
+"10
+[; ;./meTELAS.h: 10: void * me_telas_ajuste_inicial ( void * arg, void * next );
+[v _me_telas_ajuste_inicial `(*v ~T0 @X0 0 ef2`*v`*v ]
+"78
+[; ;./meTELAS.h: 78: void * me_tela_memoria_ocupadas ( void * agr , void * next );
+[v _me_tela_memoria_ocupadas `(*v ~T0 @X0 0 ef2`*v`*v ]
+"51 ./fifo.h
+[; ;./fifo.h: 51: void fifo_print_reset ( void );
+[v _fifo_print_reset `(v ~T0 @X0 0 ef ]
+"69 ./meTELAS.h
+[; ;./meTELAS.h: 69: void * me_telas_repetir_ultima_seq( void * arg, void * next );
+[v _me_telas_repetir_ultima_seq `(*v ~T0 @X0 0 ef2`*v`*v ]
+"43
+[; ;./meTELAS.h: 43: void * me_telas_config_menu( void * arg, void * next );
+[v _me_telas_config_menu `(*v ~T0 @X0 0 ef2`*v`*v ]
+"17 ./teclado.h
+[; ;./teclado.h: 17: unsigned char get_tecla( void );
+[v _get_tecla `(uc ~T0 @X0 0 ef ]
+"57 ./meTELAS.h
+[; ;./meTELAS.h: 57: void * me_telas_ajuste_editar (void * arg, void * next );
+[v _me_telas_ajuste_editar `(*v ~T0 @X0 0 ef2`*v`*v ]
+"14 ./fifo.h
+[; ;./fifo.h: 14: void alt_atuador( char tecla );
+[v _alt_atuador `(v ~T0 @X0 0 ef1`uc ]
+"19 ./meTELAS.h
+[; ;./meTELAS.h: 19: void * me_tela_inserir_passo (void * arg, void * next);
+[v _me_tela_inserir_passo `(*v ~T0 @X0 0 ef2`*v`*v ]
+"59
+[; ;./meTELAS.h: 59: void * me_telas_contar_passo ( void * arg, void * next );
+[v _me_telas_contar_passo `(*v ~T0 @X0 0 ef2`*v`*v ]
+"23 ./fifo.h
+[; ;./fifo.h: 23: char fifo_indice(void);
+[v _fifo_indice `(uc ~T0 @X0 0 ef ]
+"25
+[; ;./fifo.h: 25: char fifo_tam(void);
+[v _fifo_tam `(uc ~T0 @X0 0 ef ]
+"60 ./meTELAS.h
+[; ;./meTELAS.h: 60: void * me_telas_editar_passo ( void * arg, void * next);
+[v _me_telas_editar_passo `(*v ~T0 @X0 0 ef2`*v`*v ]
+"24 ./fifo.h
+[; ;./fifo.h: 24: char fifo_disponivel( void );
+[v _fifo_disponivel `(uc ~T0 @X0 0 ef ]
+"21
+[; ;./fifo.h: 21: void fifo_add(const char passo);
+[v _fifo_add `(v ~T0 @X0 0 ef1`Cuc ]
+"58 ./meTELAS.h
+[; ;./meTELAS.h: 58: void * me_telas_print_fifo ( void * arg, void * next );
+[v _me_telas_print_fifo `(*v ~T0 @X0 0 ef2`*v`*v ]
+"26 ./fifo.h
+[; ;./fifo.h: 26: void fifo_indicePrint_inc( void );
+[v _fifo_indicePrint_inc `(v ~T0 @X0 0 ef ]
+"27
+[; ;./fifo.h: 27: void fifo_indicePrint_dec( void );
+[v _fifo_indicePrint_dec `(v ~T0 @X0 0 ef ]
+"20
+[; ;./fifo.h: 20: void fifo_delete(void);
+[v _fifo_delete `(v ~T0 @X0 0 ef ]
+"62 ./meTELAS.h
+[; ;./meTELAS.h: 62: void * me_telas_tempo ( void * arg, void * next );
+[v _me_telas_tempo `(*v ~T0 @X0 0 ef2`*v`*v ]
+"66
+[; ;./meTELAS.h: 66: void * me_tela_inserir_tempo_fila ( void * arg, void * next );
+[v _me_tela_inserir_tempo_fila `(*v ~T0 @X0 0 ef2`*v`*v ]
+"63
+[; ;./meTELAS.h: 63: void *me_telas_controle (void * arg, void * next );
+[v _me_telas_controle `(*v ~T0 @X0 0 ef2`*v`*v ]
+"65
+[; ;./meTELAS.h: 65: void * me_tela_inserir_contrl_fila ( void * arg, void * next );
+[v _me_tela_inserir_contrl_fila `(*v ~T0 @X0 0 ef2`*v`*v ]
+"28
+[; ;./meTELAS.h: 28: void * me_tela_salvar_seq (void * arg, void * next );
+[v _me_tela_salvar_seq `(*v ~T0 @X0 0 ef2`*v`*v ]
+"67
+[; ;./meTELAS.h: 67: void *me_telas_num_config ( void * arg, void * next);
+[v _me_telas_num_config `(*v ~T0 @X0 0 ef2`*v`*v ]
+"29 ./fifo.h
+[; ;./fifo.h: 29: void dignum_conc(char dig, unsigned int * ptrNum );
+[v _dignum_conc `(v ~T0 @X0 0 ef2`uc`*ui ]
+"30
+[; ;./fifo.h: 30: void dignum_apagar(unsigned int * ptrNum );
+[v _dignum_apagar `(v ~T0 @X0 0 ef1`*ui ]
+"22
+[; ;./fifo.h: 22: void fifo_add_tempo(const char t);
+[v _fifo_add_tempo `(v ~T0 @X0 0 ef1`Cuc ]
+"45
+[; ;./fifo.h: 45: void fifo_add_control(const char c);
+[v _fifo_add_control `(v ~T0 @X0 0 ef1`Cuc ]
+"28
+[; ;./fifo.h: 28: void fifo_print(void);
+[v _fifo_print `(v ~T0 @X0 0 ef ]
+"52 ./meTELAS.h
+[; ;./meTELAS.h: 52: void * me_telas_buscar( void * arg, void * next );
+[v _me_telas_buscar `(*v ~T0 @X0 0 ef2`*v`*v ]
+"79
+[; ;./meTELAS.h: 79: void * me_tela_buscar_tecla( void * arg, void * next);
+[v _me_tela_buscar_tecla `(*v ~T0 @X0 0 ef2`*v`*v ]
+"26
+[; ;./meTELAS.h: 26: void * me_telas_teclado ( void * arg, void * next );
+[v _me_telas_teclado `(*v ~T0 @X0 0 ef2`*v`*v ]
+[v F3470 `(v ~T0 @X0 0 tf2`uc`*uc ]
+[v F3474 `(v ~T0 @X0 0 tf2`uc`*uc ]
+[v F3478 `(v ~T0 @X0 0 tf3`uc`uc`uc ]
+[v F3483 `(v ~T0 @X0 0 tf3`uc`uc`*uc ]
+[v F3488 `(v ~T0 @X0 0 tf1`uc ]
+[v F3491 `(v ~T0 @X0 0 tf1`*uc ]
+[v F3494 `(uc ~T0 @X0 0 tf2`uc`uc ]
+[v F3498 `(v ~T0 @X0 0 tf1`*uc ]
+"19 ./sequencia.h
+[; ;./sequencia.h: 19: {
+[s S370 `*F3470 1 `*F3474 1 `*F3478 1 `*F3483 1 `*F3488 1 `*F3491 1 `*F3494 1 `*F3498 1 ]
+[n S370 sequencia_t salvarReceita buscarReceita salvarDado buscarDado deletarReceita receitaLivre formatarMemoria printReceitaLivre ]
+"31
+[; ;./sequencia.h: 31: extern struct sequencia_t seq;
+[v _seq `S370 ~T0 @X0 0 e ]
+"47 ./fifo.h
+[; ;./fifo.h: 47: void manipula_atuadores_init(char aux);
+[v _manipula_atuadores_init `(v ~T0 @X0 0 ef1`uc ]
+"49
+[; ;./fifo.h: 49: void decodifica( unsigned char *d );
+[v _decodifica `(v ~T0 @X0 0 ef1`*uc ]
+"80 ./meTELAS.h
+[; ;./meTELAS.h: 80: void * me_telas_print_buscar ( void * arg, void * next );
+[v _me_telas_print_buscar `(*v ~T0 @X0 0 ef2`*v`*v ]
+"35
+[; ;./meTELAS.h: 35: void * me_tela_edit_ciclos( void * arg, void * next );
+[v _me_tela_edit_ciclos `(*v ~T0 @X0 0 ef2`*v`*v ]
+"39
+[; ;./meTELAS.h: 39: void * me_telas_verifica_memoria ( void * arg, void * next );
+[v _me_telas_verifica_memoria `(*v ~T0 @X0 0 ef2`*v`*v ]
+"38
+[; ;./meTELAS.h: 38: void * me_tela_memoria_aviso ( void * arg, void * next );
+[v _me_tela_memoria_aviso `(*v ~T0 @X0 0 ef2`*v`*v ]
+"30
+[; ;./meTELAS.h: 30: void * me_tela_memoria_escolha (void * arg, void * next );
+[v _me_tela_memoria_escolha `(*v ~T0 @X0 0 ef2`*v`*v ]
+"32
+[; ;./meTELAS.h: 32: void * me_tela_memoria_escolha_tecla( void * arg, void * next);
+[v _me_tela_memoria_escolha_tecla `(*v ~T0 @X0 0 ef2`*v`*v ]
+"8 ./sequencia.h
+[; ;./sequencia.h: 8: void salvar_dado (char adrs, char col, unsigned char data);
+[v _salvar_dado `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"19 ./fifo.h
+[; ;./fifo.h: 19: char * fifo_adrs(void);
+[v _fifo_adrs `(*uc ~T0 @X0 0 ef ]
+"34 ./meTELAS.h
+[; ;./meTELAS.h: 34: void * me_tela_memoria_salvando( void * arg, void * next );
+[v _me_tela_memoria_salvando `(*v ~T0 @X0 0 ef2`*v`*v ]
+"37
+[; ;./meTELAS.h: 37: void * me_tela_edit_ciclos_tecla ( void * arg, void * next );
+[v _me_tela_edit_ciclos_tecla `(*v ~T0 @X0 0 ef2`*v`*v ]
+"7 ./meEXEC.h
+[; ;./meEXEC.h: 7: extern char btt;
+[v _btt `uc ~T0 @X0 0 e ]
+"68 ./meTELAS.h
+[; ;./meTELAS.h: 68: void * me_tela_inserir_ciclo_fifo ( void * arg, void * next );
+[v _me_tela_inserir_ciclo_fifo `(*v ~T0 @X0 0 ef2`*v`*v ]
+"32 ./fifo.h
+[; ;./fifo.h: 32: void fifo_add_ciclo(unsigned int ciclos);
+[v _fifo_add_ciclo `(v ~T0 @X0 0 ef1`ui ]
+"48 ./meTELAS.h
+[; ;./meTELAS.h: 48: void * me_tela_execucao (void * arg , void * next );
+[v _me_tela_execucao `(*v ~T0 @X0 0 ef2`*v`*v ]
+"4 ./meEXEC.h
+[; ;./meEXEC.h: 4: extern struct fsmT execucao;
+[v _execucao `S367 ~T0 @X0 0 e ]
+"10
+[; ;./meEXEC.h: 10: void * me_exec_init ( void * arg, void * next );
+[v _me_exec_init `(*v ~T0 @X0 0 ef2`*v`*v ]
+"77 ./meTELAS.h
+[; ;./meTELAS.h: 77: void * me_tela_execucao_print (void * arg , void * next );
+[v _me_tela_execucao_print `(*v ~T0 @X0 0 ef2`*v`*v ]
+"13 ./meEXEC.h
+[; ;./meEXEC.h: 13: void * me_exec_principal ( void * arg, void * next );
+[v _me_exec_principal `(*v ~T0 @X0 0 ef2`*v`*v ]
+"43 ./fifo.h
+[; ;./fifo.h: 43: void printExec (char col, char ind);
+[v _printExec `(v ~T0 @X0 0 ef2`uc`uc ]
+"39
+[; ;./fifo.h: 39: unsigned char getIndicePassos(void);
+[v _getIndicePassos `(uc ~T0 @X0 0 ef ]
+"34
+[; ;./fifo.h: 34: unsigned int getContCiclos(void);
+[v _getContCiclos `(ui ~T0 @X0 0 ef ]
+"9 ./meEXEC.h
+[; ;./meEXEC.h: 9: void * me_exec_vazio ( void * arg, void * next );
+[v _me_exec_vazio `(*v ~T0 @X0 0 ef2`*v`*v ]
+"70 ./meTELAS.h
+[; ;./meTELAS.h: 70: void * me_telas_cancelar_execucao ( void * arg , void * next );
+[v _me_telas_cancelar_execucao `(*v ~T0 @X0 0 ef2`*v`*v ]
+"35 ./fifo.h
+[; ;./fifo.h: 35: void resetContCiclos(void);
+[v _resetContCiclos `(v ~T0 @X0 0 ef ]
+"40
+[; ;./fifo.h: 40: void resetIndicePassos(void);
+[v _resetIndicePassos `(v ~T0 @X0 0 ef ]
+"42 ./meTELAS.h
+[; ;./meTELAS.h: 42: void * me_telas_config_menu_tecla( void * arg, void * next );
+[v _me_telas_config_menu_tecla `(*v ~T0 @X0 0 ef2`*v`*v ]
+"82
+[; ;./meTELAS.h: 82: void *me_telas_config1_msg (void * arg, void * next );
+[v _me_telas_config1_msg `(*v ~T0 @X0 0 ef2`*v`*v ]
+"73
+[; ;./meTELAS.h: 73: void * me_telas_config2_msg(void * arg, void * next );
+[v _me_telas_config2_msg `(*v ~T0 @X0 0 ef2`*v`*v ]
+"46
+[; ;./meTELAS.h: 46: void * me_telas_config_terceiro(void * arg, void * next );
+[v _me_telas_config_terceiro `(*v ~T0 @X0 0 ef2`*v`*v ]
+"87
+[; ;./meTELAS.h: 87: void * me_telas_config4_inf (void * arg, void * next );
+[v _me_telas_config4_inf `(*v ~T0 @X0 0 ef2`*v`*v ]
+"83
+[; ;./meTELAS.h: 83: void * me_telas_config1_tecla ( void * arg, void * next );
+[v _me_telas_config1_tecla `(*v ~T0 @X0 0 ef2`*v`*v ]
+"84
+[; ;./meTELAS.h: 84: void * me_telas_config1_exec (void * arg, void * next );
+[v _me_telas_config1_exec `(*v ~T0 @X0 0 ef2`*v`*v ]
+"88
+[; ;./meTELAS.h: 88: void * me_telas_config1_excluir ( void * arg, void * next );
+[v _me_telas_config1_excluir `(*v ~T0 @X0 0 ef2`*v`*v ]
+"74
+[; ;./meTELAS.h: 74: void * me_telas_config2_exec(void * arg, void * next );
+[v _me_telas_config2_exec `(*v ~T0 @X0 0 ef2`*v`*v ]
+"75
+[; ;./meTELAS.h: 75: void * me_telas_config2_ready(void * arg, void * next );
+[v _me_telas_config2_ready `(*v ~T0 @X0 0 ef2`*v`*v ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
+[; <" SPPDATA equ 0F62h ;# ">
+"74
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 74: __asm("SPPCFG equ 0F63h");
+[; <" SPPCFG equ 0F63h ;# ">
+"151
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 151: __asm("SPPEPS equ 0F64h");
+[; <" SPPEPS equ 0F64h ;# ">
+"225
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 225: __asm("SPPCON equ 0F65h");
+[; <" SPPCON equ 0F65h ;# ">
+"251
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 251: __asm("UFRM equ 0F66h");
+[; <" UFRM equ 0F66h ;# ">
+"258
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 258: __asm("UFRML equ 0F66h");
+[; <" UFRML equ 0F66h ;# ">
+"336
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 336: __asm("UFRMH equ 0F67h");
+[; <" UFRMH equ 0F67h ;# ">
+"376
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 376: __asm("UIR equ 0F68h");
+[; <" UIR equ 0F68h ;# ">
+"432
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 432: __asm("UIE equ 0F69h");
+[; <" UIE equ 0F69h ;# ">
+"488
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 488: __asm("UEIR equ 0F6Ah");
+[; <" UEIR equ 0F6Ah ;# ">
+"539
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 539: __asm("UEIE equ 0F6Bh");
+[; <" UEIE equ 0F6Bh ;# ">
+"590
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 590: __asm("USTAT equ 0F6Ch");
+[; <" USTAT equ 0F6Ch ;# ">
+"650
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 650: __asm("UCON equ 0F6Dh");
+[; <" UCON equ 0F6Dh ;# ">
+"701
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 701: __asm("UADDR equ 0F6Eh");
+[; <" UADDR equ 0F6Eh ;# ">
+"765
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 765: __asm("UCFG equ 0F6Fh");
+[; <" UCFG equ 0F6Fh ;# ">
+"844
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 844: __asm("UEP0 equ 0F70h");
+[; <" UEP0 equ 0F70h ;# ">
+"952
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 952: __asm("UEP1 equ 0F71h");
+[; <" UEP1 equ 0F71h ;# ">
+"1060
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1060: __asm("UEP2 equ 0F72h");
+[; <" UEP2 equ 0F72h ;# ">
+"1168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1168: __asm("UEP3 equ 0F73h");
+[; <" UEP3 equ 0F73h ;# ">
+"1276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1276: __asm("UEP4 equ 0F74h");
+[; <" UEP4 equ 0F74h ;# ">
+"1384
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1384: __asm("UEP5 equ 0F75h");
+[; <" UEP5 equ 0F75h ;# ">
+"1492
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1492: __asm("UEP6 equ 0F76h");
+[; <" UEP6 equ 0F76h ;# ">
+"1600
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1600: __asm("UEP7 equ 0F77h");
+[; <" UEP7 equ 0F77h ;# ">
+"1708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1708: __asm("UEP8 equ 0F78h");
+[; <" UEP8 equ 0F78h ;# ">
+"1784
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1784: __asm("UEP9 equ 0F79h");
+[; <" UEP9 equ 0F79h ;# ">
+"1860
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1860: __asm("UEP10 equ 0F7Ah");
+[; <" UEP10 equ 0F7Ah ;# ">
+"1936
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 1936: __asm("UEP11 equ 0F7Bh");
+[; <" UEP11 equ 0F7Bh ;# ">
+"2012
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2012: __asm("UEP12 equ 0F7Ch");
+[; <" UEP12 equ 0F7Ch ;# ">
+"2088
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2088: __asm("UEP13 equ 0F7Dh");
+[; <" UEP13 equ 0F7Dh ;# ">
+"2164
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2164: __asm("UEP14 equ 0F7Eh");
+[; <" UEP14 equ 0F7Eh ;# ">
+"2240
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2240: __asm("UEP15 equ 0F7Fh");
+[; <" UEP15 equ 0F7Fh ;# ">
+"2316
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2316: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"2455
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2455: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"2565
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2565: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"2707
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2707: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"2828
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2828: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"2975
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 2975: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"3075
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3075: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"3187
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3187: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"3265
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3265: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"3377
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3377: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"3429
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3429: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"3434
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3434: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"3627
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3627: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"3632
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3632: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"3849
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3849: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"3854
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 3854: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"4003
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4003: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"4008
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4008: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"4225
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4225: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"4230
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4230: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"4327
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4327: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"4386
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4386: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"4470
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4470: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"4554
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4554: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"4638
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4638: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"4709
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4709: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"4780
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4780: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"4851
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4851: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"4917
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4917: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"4924
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4924: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"4931
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4931: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"4938
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4938: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"4943
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4943: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"5148
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5148: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"5153
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5153: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"5404
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5404: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"5409
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5409: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"5416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5416: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"5421
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5421: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"5428
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5428: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"5433
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5433: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"5440
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5440: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"5447
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5447: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"5568
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5568: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"5575
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5575: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"5582
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5582: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"5589
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5589: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"5679
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5679: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"5764
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5764: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"5769
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5769: __asm("CCP1AS equ 0FB6h");
+[; <" CCP1AS equ 0FB6h ;# ">
+"5926
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5926: __asm("ECCP1DEL equ 0FB7h");
+[; <" ECCP1DEL equ 0FB7h ;# ">
+"5931
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5931: __asm("CCP1DEL equ 0FB7h");
+[; <" CCP1DEL equ 0FB7h ;# ">
+"6064
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6064: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"6069
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6069: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"6244
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6244: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"6308
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6308: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"6315
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6315: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"6322
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6322: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"6329
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6329: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"6334
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6334: __asm("ECCP1CON equ 0FBDh");
+[; <" ECCP1CON equ 0FBDh ;# ">
+"6491
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6491: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"6498
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6498: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"6505
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6505: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"6512
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6512: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"6583
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6583: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"6668
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6668: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"6787
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6787: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"6794
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6794: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"6801
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6801: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"6808
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6808: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"6870
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6870: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"6940
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6940: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"7188
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7188: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"7195
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7195: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"7202
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7202: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"7300
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7300: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"7305
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7305: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"7410
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7410: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"7417
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7417: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"7520
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7520: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"7527
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7527: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"7534
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7534: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"7541
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7541: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"7690
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7690: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"7718
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7718: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"7723
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7723: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"7988
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 7988: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"8071
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8071: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"8141
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8141: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"8148
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8148: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"8155
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8155: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"8162
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8162: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"8233
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8233: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"8240
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8240: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"8247
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8247: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"8254
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8254: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"8261
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8261: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"8268
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8268: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"8275
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8275: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"8282
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8282: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"8289
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8289: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"8296
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8296: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"8303
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8303: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"8310
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8310: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"8317
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8317: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"8324
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8324: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"8331
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8331: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"8338
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8338: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"8345
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8345: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"8352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8352: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"8359
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8359: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"8366
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8366: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"8373
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8373: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"8380
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8380: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"8387
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8387: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"8394
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8394: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"8401
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8401: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"8408
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8408: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"8415
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8415: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"8507
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8507: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"8584
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8584: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"8701
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8701: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"8708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8708: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"8715
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8715: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"8722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8722: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"8731
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8731: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"8738
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8738: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"8745
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8745: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"8752
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8752: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"8761
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8761: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"8768
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8768: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"8775
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8775: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"8782
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8782: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"8789
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8789: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"8796
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8796: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"8872
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8872: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"8879
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8879: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"8886
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8886: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"8893
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+"14 ./IHM.h
+[; ;./IHM.h: 14: } IHM = { dispLCD_init, dispLCD_str, dispLCD, dispLCD_num, dispLCD_clr };
+[v _IHM `S369 ~T0 @X0 1 e ]
+[i _IHM
+:U ..
+:U ..
+&U _dispLCD_init
+&U _dispLCD_str
+&U _dispLCD
+&U _dispLCD_num
+&U _dispLCD_clr
+..
+..
+]
+"45 meTELAS.c
+[; ;meTELAS.c: 45: const char list[20]="0 1 2 3 4 5 6 7 8 9";
+[v _list `Cuc ~T0 @X0 -> 20 `i e ]
+[i _list
+:U ..
+-> 48 `c
+-> 32 `c
+-> 49 `c
+-> 32 `c
+-> 50 `c
+-> 32 `c
+-> 51 `c
+-> 32 `c
+-> 52 `c
+-> 32 `c
+-> 53 `c
+-> 32 `c
+-> 54 `c
+-> 32 `c
+-> 55 `c
+-> 32 `c
+-> 56 `c
+-> 32 `c
+-> 57 `c
+-> 0 `c
+..
+]
+"46
+[; ;meTELAS.c: 46: const char subscrever[20]="0 1 2 3 4 5 6 7 8 9 ";
+[v _subscrever `Cuc ~T0 @X0 -> 20 `i e ]
+[i _subscrever
+:U ..
+-> 48 `c
+-> 32 `c
+-> 49 `c
+-> 32 `c
+-> 50 `c
+-> 32 `c
+-> 51 `c
+-> 32 `c
+-> 52 `c
+-> 32 `c
+-> 53 `c
+-> 32 `c
+-> 54 `c
+-> 32 `c
+-> 55 `c
+-> 32 `c
+-> 56 `c
+-> 32 `c
+-> 57 `c
+-> 32 `c
+..
+]
+"47
+[; ;meTELAS.c: 47: unsigned char *ptr_aux;
+[v _ptr_aux `*uc ~T0 @X0 1 e ]
+"48
+[; ;meTELAS.c: 48: char *ptr;
+[v _ptr `*uc ~T0 @X0 1 e ]
+"49
+[; ;meTELAS.c: 49: unsigned char vtr_aux[16];
+[v _vtr_aux `uc ~T0 @X0 -> 16 `i e ]
+"50
+[; ;meTELAS.c: 50: unsigned char cond_inicial = 0;
+[v _cond_inicial `uc ~T0 @X0 1 e ]
+[i _cond_inicial
+-> -> 0 `i `uc
+]
+"51
+[; ;meTELAS.c: 51: unsigned int segundos = 0;
+[v _segundos `ui ~T0 @X0 1 e ]
+[i _segundos
+-> -> 0 `i `ui
+]
+"52
+[; ;meTELAS.c: 52: unsigned int numero = 0;
+[v _numero `ui ~T0 @X0 1 e ]
+[i _numero
+-> -> 0 `i `ui
+]
+"53
+[; ;meTELAS.c: 53: unsigned int tensao = 0;
+[v _tensao `ui ~T0 @X0 1 e ]
+[i _tensao
+-> -> 0 `i `ui
+]
+"54
+[; ;meTELAS.c: 54: unsigned int ciclos = 0;
+[v _ciclos `ui ~T0 @X0 1 e ]
+[i _ciclos
+-> -> 0 `i `ui
+]
+"55
+[; ;meTELAS.c: 55: unsigned char modo = 0;
+[v _modo `uc ~T0 @X0 1 e ]
+[i _modo
+-> -> 0 `i `uc
+]
+"57
+[; ;meTELAS.c: 57: unsigned char aux[10]="          ";
+[v _aux `uc ~T0 @X0 -> 10 `i e ]
+[i _aux
+:U ..
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+..
+]
+"58
+[; ;meTELAS.c: 58: unsigned char aux1[10]="          ";
+[v _aux1 `uc ~T0 @X0 -> 10 `i e ]
+[i _aux1
+:U ..
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+..
+]
+"59
+[; ;meTELAS.c: 59: unsigned char right[20]="                    ";
+[v _right `uc ~T0 @X0 -> 20 `i e ]
+[i _right
+:U ..
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+..
+]
+"60
+[; ;meTELAS.c: 60: unsigned char config1[20]="                    ";
+[v _config1 `uc ~T0 @X0 -> 20 `i e ]
+[i _config1
+:U ..
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+..
+]
+"61
+[; ;meTELAS.c: 61: char vetor[19]="                    ";
+[v _vetor `uc ~T0 @X0 -> 19 `i e ]
+[i _vetor
+:U ..
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+..
+]
+"63
+[; ;meTELAS.c: 63: unsigned char teclado = 0;
+[v _teclado `uc ~T0 @X0 1 e ]
+[i _teclado
+-> -> 0 `i `uc
+]
+"64
+[; ;meTELAS.c: 64: char from = 0;
+[v _from `uc ~T0 @X0 1 e ]
+[i _from
+-> -> 0 `i `uc
+]
+"66
+[; ;meTELAS.c: 66: struct fsmT tela;
+[v _tela `S367 ~T0 @X0 1 e ]
+"70
+[; ;meTELAS.c: 70: void ajuste_init ( void )
+[v _ajuste_init `(v ~T0 @X0 1 ef ]
+"71
+[; ;meTELAS.c: 71: {
+{
+[e :U _ajuste_init ]
+[f ]
+"72
+[; ;meTELAS.c: 72:     dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 65 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"73
+[; ;meTELAS.c: 73:     dispLCD_lincol(3, 8); dispLCD_dataReg(ler_atuador('B') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 66 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"74
+[; ;meTELAS.c: 74:     dispLCD_lincol(3, 12);dispLCD_dataReg(ler_atuador('C') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 12 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 67 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"75
+[; ;meTELAS.c: 75:     dispLCD_lincol(3, 16);dispLCD_dataReg(ler_atuador('D') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 16 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 68 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"76
+[; ;meTELAS.c: 76: }
+[e :UE 371 ]
+}
+"78
+[; ;meTELAS.c: 78: void * me_telas_init( void * arg, void * next )
+[v _me_telas_init `(*v ~T0 @X0 1 ef2`*v`*v ]
+"79
+[; ;meTELAS.c: 79: {
+{
+[e :U _me_telas_init ]
+"78
+[; ;meTELAS.c: 78: void * me_telas_init( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"79
+[; ;meTELAS.c: 79: {
+[f ]
+"80
+[; ;meTELAS.c: 80:     IHM.init();
+[e ( *U . _IHM 0 ..  ]
+"81
+[; ;meTELAS.c: 81:     tela.next = me_telas_logo;
+[e = . _tela 2 -> &U _me_telas_logo `*v ]
+"82
+[; ;meTELAS.c: 82:     return( me_telas_logo );
+[e ) -> &U _me_telas_logo `*v ]
+[e $UE 372  ]
+"83
+[; ;meTELAS.c: 83: }
+[e :UE 372 ]
+}
+"85
+[; ;meTELAS.c: 85: void * me_telas_start( void * arg, void * next )
+[v _me_telas_start `(*v ~T0 @X0 1 ef2`*v`*v ]
+"86
+[; ;meTELAS.c: 86: {
+{
+[e :U _me_telas_start ]
+"85
+[; ;meTELAS.c: 85: void * me_telas_start( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"86
+[; ;meTELAS.c: 86: {
+[f ]
+"88
+[; ;meTELAS.c: 88:      for(char i = 0; i <= 3; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 374  ]
+[e $U 375  ]
+[e :U 374 ]
+"89
+[; ;meTELAS.c: 89:     {
+{
+"90
+[; ;meTELAS.c: 90:         for(char j = 0; j <= 19; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 377  ]
+[e $U 378  ]
+[e :U 377 ]
+"91
+[; ;meTELAS.c: 91:         {
+{
+"92
+[; ;meTELAS.c: 92:             IHM.printpos(i, j, "\377");
+[e ( *U . _IHM 2 (3 , , -> _i `uc -> _j `uc :s 1C ]
+"93
+[; ;meTELAS.c: 93:             delay(10);
+[e ( _delay (1 -> -> 10 `i `ui ]
+"94
+[; ;meTELAS.c: 94:         }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 377  ]
+[e :U 378 ]
+}
+"95
+[; ;meTELAS.c: 95:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 374  ]
+[e :U 375 ]
+}
+"97
+[; ;meTELAS.c: 97:     for(char i = 0; i <= 3; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 380  ]
+[e $U 381  ]
+[e :U 380 ]
+"98
+[; ;meTELAS.c: 98:     {
+{
+"99
+[; ;meTELAS.c: 99:         for(char j = 0; j <= 19; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 383  ]
+[e $U 384  ]
+[e :U 383 ]
+"100
+[; ;meTELAS.c: 100:         {
+{
+"101
+[; ;meTELAS.c: 101:             IHM.printpos(i, j, " ");
+[e ( *U . _IHM 2 (3 , , -> _i `uc -> _j `uc :s 2C ]
+"102
+[; ;meTELAS.c: 102:             delay(10);
+[e ( _delay (1 -> -> 10 `i `ui ]
+"103
+[; ;meTELAS.c: 103:         }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 383  ]
+[e :U 384 ]
+}
+"104
+[; ;meTELAS.c: 104:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 380  ]
+[e :U 381 ]
+}
+"106
+[; ;meTELAS.c: 106:     return( next );
+[e ) _next ]
+[e $UE 373  ]
+"107
+[; ;meTELAS.c: 107: }
+[e :UE 373 ]
+}
+"110
+[; ;meTELAS.c: 110: void * me_telas_logo( void * arg, void * next )
+[v _me_telas_logo `(*v ~T0 @X0 1 ef2`*v`*v ]
+"111
+[; ;meTELAS.c: 111: {
+{
+[e :U _me_telas_logo ]
+"110
+[; ;meTELAS.c: 110: void * me_telas_logo( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"111
+[; ;meTELAS.c: 111: {
+[f ]
+"112
+[; ;meTELAS.c: 112:     IHM.printpos(1, 0, "      SEGGIT        ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 3C ]
+[v F3626 `uc ~T0 @X0 -> 20 `i s ]
+[i F3626
+:U ..
+"114
+[; ;meTELAS.c: 114:     char lema[20] = "Mundo ao seu comando";
+-> 77 `c
+-> 117 `c
+-> 110 `c
+-> 100 `c
+-> 111 `c
+-> 32 `c
+-> 97 `c
+-> 111 `c
+-> 32 `c
+-> 115 `c
+-> 101 `c
+-> 117 `c
+-> 32 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 97 `c
+-> 110 `c
+-> 100 `c
+-> 111 `c
+..
+]
+[v _lema `uc ~T0 @X0 -> 20 `i a ]
+[e = _lema F3626 ]
+"115
+[; ;meTELAS.c: 115:     char i = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"118
+[; ;meTELAS.c: 118:     for(ptr = lema; *ptr != 0; ptr++)
+{
+[e = _ptr &U _lema ]
+[e $U 390  ]
+[e :U 387 ]
+"119
+[; ;meTELAS.c: 119:     {
+{
+"120
+[; ;meTELAS.c: 120:         dispLCD_lincol( 2, i );
+[e ( _dispLCD_lincol (2 , -> -> 2 `i `uc -> _i `uc ]
+"121
+[; ;meTELAS.c: 121:         dispLCD_dataReg( *ptr );
+[e ( _dispLCD_dataReg (1 -> *U _ptr `uc ]
+"122
+[; ;meTELAS.c: 122:         i++;
+[e ++ _i -> -> 1 `i `uc ]
+"123
+[; ;meTELAS.c: 123:         delay(50);
+[e ( _delay (1 -> -> 50 `i `ui ]
+"124
+[; ;meTELAS.c: 124:     }
+}
+[e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[e :U 390 ]
+[e $ != -> *U _ptr `i -> 0 `i 387  ]
+[e :U 388 ]
+}
+"125
+[; ;meTELAS.c: 125:     ptr = 0;
+[e = _ptr -> -> 0 `i `*uc ]
+"127
+[; ;meTELAS.c: 127:     tela.arg = me_telas_clean;
+[e = . _tela 1 -> &U _me_telas_clean `*v ]
+"128
+[; ;meTELAS.c: 128:     setT1(200);
+[e ( _setT1 (1 -> -> -> 200 `i `l `ul ]
+"129
+[; ;meTELAS.c: 129:     tela.next = me_telas_menu;
+[e = . _tela 2 -> &U _me_telas_menu `*v ]
+"130
+[; ;meTELAS.c: 130:     return( me_telas_delay );
+[e ) -> &U _me_telas_delay `*v ]
+[e $UE 386  ]
+"131
+[; ;meTELAS.c: 131: }
+[e :UE 386 ]
+}
+"133
+[; ;meTELAS.c: 133: void * me_telas_delay( void * arg, void * next )
+[v _me_telas_delay `(*v ~T0 @X0 1 ef2`*v`*v ]
+"134
+[; ;meTELAS.c: 134: {
+{
+[e :U _me_telas_delay ]
+"133
+[; ;meTELAS.c: 133: void * me_telas_delay( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"134
+[; ;meTELAS.c: 134: {
+[f ]
+"135
+[; ;meTELAS.c: 135:     if( !statusT1() )
+[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 392  ]
+"136
+[; ;meTELAS.c: 136:         return( arg );
+[e ) _arg ]
+[e $UE 391  ]
+[e $U 393  ]
+"137
+[; ;meTELAS.c: 137:     else
+[e :U 392 ]
+"138
+[; ;meTELAS.c: 138:         return( me_telas_delay );
+[e ) -> &U _me_telas_delay `*v ]
+[e $UE 391  ]
+[e :U 393 ]
+"139
+[; ;meTELAS.c: 139: }
+[e :UE 391 ]
+}
+"141
+[; ;meTELAS.c: 141: void * me_telas_clean( void * arg, void * next )
+[v _me_telas_clean `(*v ~T0 @X0 1 ef2`*v`*v ]
+"142
+[; ;meTELAS.c: 142: {
+{
+[e :U _me_telas_clean ]
+"141
+[; ;meTELAS.c: 141: void * me_telas_clean( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"142
+[; ;meTELAS.c: 142: {
+[f ]
+"143
+[; ;meTELAS.c: 143:     IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"144
+[; ;meTELAS.c: 144:     return ( next );
+[e ) _next ]
+[e $UE 394  ]
+"145
+[; ;meTELAS.c: 145: }
+[e :UE 394 ]
+}
+"147
+[; ;meTELAS.c: 147: void * me_telas_menu( void * arg, void * next )
+[v _me_telas_menu `(*v ~T0 @X0 1 ef2`*v`*v ]
+"148
+[; ;meTELAS.c: 148: {
+{
+[e :U _me_telas_menu ]
+"147
+[; ;meTELAS.c: 147: void * me_telas_menu( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"148
+[; ;meTELAS.c: 148: {
+[f ]
+"149
+[; ;meTELAS.c: 149:     IHM.printpos(0,0,"1: INSERIR SEQUENCIA");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 4C ]
+"150
+[; ;meTELAS.c: 150:     IHM.printpos(1,0,"2: BUSCAR SEQUENCIA ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 5C ]
+"151
+[; ;meTELAS.c: 151:     IHM.printpos(2,0,"3: REPETIR ULT. SEQU");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 6C ]
+"152
+[; ;meTELAS.c: 152:     IHM.printpos(3,0,"4: CONFIGURACOES    ");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 7C ]
+"154
+[; ;meTELAS.c: 154:     return( me_telas_menu_tecla );
+[e ) -> &U _me_telas_menu_tecla `*v ]
+[e $UE 395  ]
+"155
+[; ;meTELAS.c: 155: }
+[e :UE 395 ]
+}
+"157
+[; ;meTELAS.c: 157: void * me_telas_menu_tecla( void * arg, void * next )
+[v _me_telas_menu_tecla `(*v ~T0 @X0 1 ef2`*v`*v ]
+"158
+[; ;meTELAS.c: 158: {
+{
+[e :U _me_telas_menu_tecla ]
+"157
+[; ;meTELAS.c: 157: void * me_telas_menu_tecla( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"158
+[; ;meTELAS.c: 158: {
+[f ]
+"159
+[; ;meTELAS.c: 159:     switch( get_tecla() )
+[e $U 398  ]
+"160
+[; ;meTELAS.c: 160:     {
+{
+"161
+[; ;meTELAS.c: 161:         case '1': tela.next = me_telas_ajuste_inicial;
+[e :U 399 ]
+[e = . _tela 2 -> &U _me_telas_ajuste_inicial `*v ]
+"162
+[; ;meTELAS.c: 162:                     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 396  ]
+"163
+[; ;meTELAS.c: 163:                     break;
+[e $U 397  ]
+"164
+[; ;meTELAS.c: 164:         case '2':
+[e :U 400 ]
+"165
+[; ;meTELAS.c: 165:                     tela.next = me_tela_memoria_ocupadas;
+[e = . _tela 2 -> &U _me_tela_memoria_ocupadas `*v ]
+"166
+[; ;meTELAS.c: 166:                     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 396  ]
+"167
+[; ;meTELAS.c: 167:                     break;
+[e $U 397  ]
+"168
+[; ;meTELAS.c: 168:         case '3': fifo_print_reset();
+[e :U 401 ]
+[e ( _fifo_print_reset ..  ]
+"169
+[; ;meTELAS.c: 169:                     tela.next = me_telas_repetir_ultima_seq;
+[e = . _tela 2 -> &U _me_telas_repetir_ultima_seq `*v ]
+"170
+[; ;meTELAS.c: 170:                     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 396  ]
+"171
+[; ;meTELAS.c: 171:                     break;
+[e $U 397  ]
+"172
+[; ;meTELAS.c: 172:         case '4': tela.next = me_telas_config_menu;
+[e :U 402 ]
+[e = . _tela 2 -> &U _me_telas_config_menu `*v ]
+"173
+[; ;meTELAS.c: 173:                     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 396  ]
+"174
+[; ;meTELAS.c: 174:                     break;
+[e $U 397  ]
+"175
+[; ;meTELAS.c: 175:     }
+}
+[e $U 397  ]
+[e :U 398 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 49 `ui `i 399
+ , $ -> -> 50 `ui `i 400
+ , $ -> -> 51 `ui `i 401
+ , $ -> -> 52 `ui `i 402
+ 397 ]
+[e :U 397 ]
+"176
+[; ;meTELAS.c: 176:     return( me_telas_menu_tecla );
+[e ) -> &U _me_telas_menu_tecla `*v ]
+[e $UE 396  ]
+"177
+[; ;meTELAS.c: 177: }
+[e :UE 396 ]
+}
+"179
+[; ;meTELAS.c: 179: void * go_comeback(void * arg, void * next)
+[v _go_comeback `(*v ~T0 @X0 1 ef2`*v`*v ]
+"180
+[; ;meTELAS.c: 180: {
+{
+[e :U _go_comeback ]
+"179
+[; ;meTELAS.c: 179: void * go_comeback(void * arg, void * next)
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"180
+[; ;meTELAS.c: 180: {
+[f ]
+"182
+[; ;meTELAS.c: 182:     switch( get_tecla() )
+[e $U 405  ]
+"183
+[; ;meTELAS.c: 183:     {
+{
+"184
+[; ;meTELAS.c: 184:         case '*':
+[e :U 406 ]
+"185
+[; ;meTELAS.c: 185:             tela.next = tela.arg;
+[e = . _tela 2 . _tela 1 ]
+"186
+[; ;meTELAS.c: 186:             return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 403  ]
+"187
+[; ;meTELAS.c: 187:             break;
+[e $U 404  ]
+"189
+[; ;meTELAS.c: 189:         case '#':
+[e :U 407 ]
+"190
+[; ;meTELAS.c: 190:             tela.next = next;
+[e = . _tela 2 _next ]
+"191
+[; ;meTELAS.c: 191:             return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 403  ]
+"192
+[; ;meTELAS.c: 192:             break;
+[e $U 404  ]
+"193
+[; ;meTELAS.c: 193:     }
+}
+[e $U 404  ]
+[e :U 405 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 42 `ui `i 406
+ , $ -> -> 35 `ui `i 407
+ 404 ]
+[e :U 404 ]
+"194
+[; ;meTELAS.c: 194:     return(go_comeback);
+[e ) -> &U _go_comeback `*v ]
+[e $UE 403  ]
+"195
+[; ;meTELAS.c: 195: }
+[e :UE 403 ]
+}
+"197
+[; ;meTELAS.c: 197: void * me_telas_noprint( void * arg, void * next )
+[v _me_telas_noprint `(*v ~T0 @X0 1 ef2`*v`*v ]
+"198
+[; ;meTELAS.c: 198: {
+{
+[e :U _me_telas_noprint ]
+"197
+[; ;meTELAS.c: 197: void * me_telas_noprint( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"198
+[; ;meTELAS.c: 198: {
+[f ]
+"200
+[; ;meTELAS.c: 200:     return( next );
+[e ) _next ]
+[e $UE 408  ]
+"202
+[; ;meTELAS.c: 202: }
+[e :UE 408 ]
+}
+"204
+[; ;meTELAS.c: 204: void * me_telas_ajuste_inicial ( void * arg, void * next )
+[v _me_telas_ajuste_inicial `(*v ~T0 @X0 1 ef2`*v`*v ]
+"205
+[; ;meTELAS.c: 205: {
+{
+[e :U _me_telas_ajuste_inicial ]
+"204
+[; ;meTELAS.c: 204: void * me_telas_ajuste_inicial ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"205
+[; ;meTELAS.c: 205: {
+[f ]
+"206
+[; ;meTELAS.c: 206:     IHM.printpos(0, 0, "   AJUSTE O INICIO  ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 8C ]
+"207
+[; ;meTELAS.c: 207:     IHM.printpos(1, 0, "     DO SISTEMA     ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 9C ]
+"208
+[; ;meTELAS.c: 208:     IHM.printpos(3,0, "   A   B   C   D    ");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 10C ]
+"209
+[; ;meTELAS.c: 209:     ajuste_init();
+[e ( _ajuste_init ..  ]
+"211
+[; ;meTELAS.c: 211:     return( me_telas_ajuste_editar );
+[e ) -> &U _me_telas_ajuste_editar `*v ]
+[e $UE 409  ]
+"212
+[; ;meTELAS.c: 212: }
+[e :UE 409 ]
+}
+"214
+[; ;meTELAS.c: 214: void * me_telas_ajuste_editar (void * arg, void * next )
+[v _me_telas_ajuste_editar `(*v ~T0 @X0 1 ef2`*v`*v ]
+"215
+[; ;meTELAS.c: 215: {
+{
+[e :U _me_telas_ajuste_editar ]
+"214
+[; ;meTELAS.c: 214: void * me_telas_ajuste_editar (void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"215
+[; ;meTELAS.c: 215: {
+[f ]
+"216
+[; ;meTELAS.c: 216:     switch( get_tecla() )
+[e $U 412  ]
+"217
+[; ;meTELAS.c: 217:     {
+{
+"218
+[; ;meTELAS.c: 218:         case 'A': alt_atuador( get_tecla() ); dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-'); break;
+[e :U 413 ]
+[e ( _alt_atuador (1 -> ( _get_tecla ..  `uc ]
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 65 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+[e $U 411  ]
+"219
+[; ;meTELAS.c: 219:         case 'B': alt_atuador( get_tecla() ); dispLCD_lincol(3, 8); dispLCD_dataReg(ler_atuador('B') ? '+' : '-'); break;
+[e :U 414 ]
+[e ( _alt_atuador (1 -> ( _get_tecla ..  `uc ]
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 66 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+[e $U 411  ]
+"220
+[; ;meTELAS.c: 220:         case 'C': alt_atuador( get_tecla() ); dispLCD_lincol(3,12); dispLCD_dataReg(ler_atuador('C') ? '+' : '-'); break;
+[e :U 415 ]
+[e ( _alt_atuador (1 -> ( _get_tecla ..  `uc ]
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 12 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 67 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+[e $U 411  ]
+"221
+[; ;meTELAS.c: 221:         case 'D': alt_atuador( get_tecla() ); dispLCD_lincol(3,16); dispLCD_dataReg(ler_atuador('D') ? '+' : '-'); break;
+[e :U 416 ]
+[e ( _alt_atuador (1 -> ( _get_tecla ..  `uc ]
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 16 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 68 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+[e $U 411  ]
+"222
+[; ;meTELAS.c: 222:     }
+}
+[e $U 411  ]
+[e :U 412 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 65 `ui `i 413
+ , $ -> -> 66 `ui `i 414
+ , $ -> -> 67 `ui `i 415
+ , $ -> -> 68 `ui `i 416
+ 411 ]
+[e :U 411 ]
+"224
+[; ;meTELAS.c: 224:     tela.next = me_tela_inserir_passo;
+[e = . _tela 2 -> &U _me_tela_inserir_passo `*v ]
+"226
+[; ;meTELAS.c: 226:       if( get_tecla() == '#' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 35 `ui 417  ]
+"227
+[; ;meTELAS.c: 227:           return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 410  ]
+[e :U 417 ]
+"228
+[; ;meTELAS.c: 228:       if( get_tecla() == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 418  ]
+"229
+[; ;meTELAS.c: 229:           return( me_telas_menu );
+[e ) -> &U _me_telas_menu `*v ]
+[e $UE 410  ]
+[e :U 418 ]
+"231
+[; ;meTELAS.c: 231:     return( me_telas_ajuste_editar );
+[e ) -> &U _me_telas_ajuste_editar `*v ]
+[e $UE 410  ]
+"232
+[; ;meTELAS.c: 232: }
+[e :UE 410 ]
+}
+"234
+[; ;meTELAS.c: 234: void * me_tela_inserir_passo (void * arg, void * next)
+[v _me_tela_inserir_passo `(*v ~T0 @X0 1 ef2`*v`*v ]
+"235
+[; ;meTELAS.c: 235: {
+{
+[e :U _me_tela_inserir_passo ]
+"234
+[; ;meTELAS.c: 234: void * me_tela_inserir_passo (void * arg, void * next)
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"235
+[; ;meTELAS.c: 235: {
+[f ]
+"237
+[; ;meTELAS.c: 237:     IHM.printpos(0,0,"  INSIRA OS PASSOS  ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 11C ]
+"239
+[; ;meTELAS.c: 239:     tela.next = me_telas_contar_passo;
+[e = . _tela 2 -> &U _me_telas_contar_passo `*v ]
+"241
+[; ;meTELAS.c: 241:     return( next );
+[e ) _next ]
+[e $UE 419  ]
+"242
+[; ;meTELAS.c: 242: }
+[e :UE 419 ]
+}
+"244
+[; ;meTELAS.c: 244: void * me_telas_contar_passo ( void * arg, void * next )
+[v _me_telas_contar_passo `(*v ~T0 @X0 1 ef2`*v`*v ]
+"245
+[; ;meTELAS.c: 245: {
+{
+[e :U _me_telas_contar_passo ]
+"244
+[; ;meTELAS.c: 244: void * me_telas_contar_passo ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"245
+[; ;meTELAS.c: 245: {
+[f ]
+"246
+[; ;meTELAS.c: 246:     IHM.printpos(3,0,"<  /  >");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 12C ]
+"247
+[; ;meTELAS.c: 247:     IHM.printv(3, 1,( fifo_indice()-2), 2 );
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 1 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
+"248
+[; ;meTELAS.c: 248:     IHM.printv(3, 4,( fifo_tam()-2), 2 );
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 4 `i `uc - -> ( _fifo_tam ..  `i -> 2 `i -> -> 2 `i `uc ]
+"251
+[; ;meTELAS.c: 251:     if( get_tecla () == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 421  ]
+"252
+[; ;meTELAS.c: 252:         return( me_telas_menu);
+[e ) -> &U _me_telas_menu `*v ]
+[e $UE 420  ]
+[e $U 422  ]
+"253
+[; ;meTELAS.c: 253:     else
+[e :U 421 ]
+"254
+[; ;meTELAS.c: 254:        return( me_telas_editar_passo );
+[e ) -> &U _me_telas_editar_passo `*v ]
+[e $UE 420  ]
+[e :U 422 ]
+"255
+[; ;meTELAS.c: 255: }
+[e :UE 420 ]
+}
+"258
+[; ;meTELAS.c: 258: void * me_telas_editar_passo ( void * arg, void * next)
+[v _me_telas_editar_passo `(*v ~T0 @X0 1 ef2`*v`*v ]
+"259
+[; ;meTELAS.c: 259: {
+{
+[e :U _me_telas_editar_passo ]
+"258
+[; ;meTELAS.c: 258: void * me_telas_editar_passo ( void * arg, void * next)
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"259
+[; ;meTELAS.c: 259: {
+[f ]
+"260
+[; ;meTELAS.c: 260:     switch( get_tecla() )
+[e $U 425  ]
+"261
+[; ;meTELAS.c: 261:     {
+{
+"262
+[; ;meTELAS.c: 262:         case 'A':
+[e :U 426 ]
+"263
+[; ;meTELAS.c: 263:         case 'B':
+[e :U 427 ]
+"264
+[; ;meTELAS.c: 264:         case 'C':
+[e :U 428 ]
+"265
+[; ;meTELAS.c: 265:         case 'D':
+[e :U 429 ]
+"267
+[; ;meTELAS.c: 267:             if( fifo_disponivel() )
+[e $ ! != -> ( _fifo_disponivel ..  `i -> 0 `i 430  ]
+"268
+[; ;meTELAS.c: 268:            {
+{
+"269
+[; ;meTELAS.c: 269:                alt_atuador( get_tecla() );
+[e ( _alt_atuador (1 -> ( _get_tecla ..  `uc ]
+"270
+[; ;meTELAS.c: 270:                fifo_add( ler_atuador( get_tecla() )? get_tecla() : get_tecla() | 0x20 );
+[e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 -> ( _get_tecla ..  `uc `i -> 0 `i : -> ( _get_tecla ..  `i | -> ( _get_tecla ..  `i -> 32 `i `uc ]
+"271
+[; ;meTELAS.c: 271:                return( me_telas_print_fifo );
+[e ) -> &U _me_telas_print_fifo `*v ]
+[e $UE 423  ]
+"272
+[; ;meTELAS.c: 272:            }
+}
+[e :U 430 ]
+"273
+[; ;meTELAS.c: 273:             break;
+[e $U 424  ]
+"275
+[; ;meTELAS.c: 275:         case '6':
+[e :U 431 ]
+"277
+[; ;meTELAS.c: 277:                 fifo_indicePrint_inc();
+[e ( _fifo_indicePrint_inc ..  ]
+"278
+[; ;meTELAS.c: 278:                 return( me_telas_print_fifo );
+[e ) -> &U _me_telas_print_fifo `*v ]
+[e $UE 423  ]
+"280
+[; ;meTELAS.c: 280:             break;
+[e $U 424  ]
+"282
+[; ;meTELAS.c: 282:         case '4':
+[e :U 432 ]
+"283
+[; ;meTELAS.c: 283:                 fifo_indicePrint_dec();
+[e ( _fifo_indicePrint_dec ..  ]
+"284
+[; ;meTELAS.c: 284:                 return( me_telas_print_fifo );
+[e ) -> &U _me_telas_print_fifo `*v ]
+[e $UE 423  ]
+"286
+[; ;meTELAS.c: 286:             break;
+[e $U 424  ]
+"288
+[; ;meTELAS.c: 288:         case '*' :
+[e :U 433 ]
+"290
+[; ;meTELAS.c: 290:             if( fifo_indice() == 2 )
+[e $ ! == -> ( _fifo_indice ..  `i -> 2 `i 434  ]
+"291
+[; ;meTELAS.c: 291:                 return( me_telas_ajuste_inicial );
+[e ) -> &U _me_telas_ajuste_inicial `*v ]
+[e $UE 423  ]
+[e $U 435  ]
+"292
+[; ;meTELAS.c: 292:             else
+[e :U 434 ]
+"293
+[; ;meTELAS.c: 293:             {
+{
+"294
+[; ;meTELAS.c: 294:                 fifo_delete();
+[e ( _fifo_delete ..  ]
+"295
+[; ;meTELAS.c: 295:                 return( me_telas_print_fifo );
+[e ) -> &U _me_telas_print_fifo `*v ]
+[e $UE 423  ]
+"296
+[; ;meTELAS.c: 296:             }
+}
+[e :U 435 ]
+"298
+[; ;meTELAS.c: 298:             break;
+[e $U 424  ]
+"300
+[; ;meTELAS.c: 300:         case '0' :
+[e :U 436 ]
+"301
+[; ;meTELAS.c: 301:             modo = 120;
+[e = _modo -> -> 120 `i `uc ]
+"302
+[; ;meTELAS.c: 302:             numero = 0;
+[e = _numero -> -> 0 `i `ui ]
+"303
+[; ;meTELAS.c: 303:             tela.next = me_telas_tempo;
+[e = . _tela 2 -> &U _me_telas_tempo `*v ]
+"304
+[; ;meTELAS.c: 304:             tela.arg = me_tela_inserir_tempo_fila;
+[e = . _tela 1 -> &U _me_tela_inserir_tempo_fila `*v ]
+"305
+[; ;meTELAS.c: 305:             return( me_telas_tempo );
+[e ) -> &U _me_telas_tempo `*v ]
+[e $UE 423  ]
+"307
+[; ;meTELAS.c: 307:             break;
+[e $U 424  ]
+"309
+[; ;meTELAS.c: 309:         case '9' :
+[e :U 437 ]
+"310
+[; ;meTELAS.c: 310:             modo = 100;
+[e = _modo -> -> 100 `i `uc ]
+"311
+[; ;meTELAS.c: 311:             numero = 0;
+[e = _numero -> -> 0 `i `ui ]
+"312
+[; ;meTELAS.c: 312:             tela.next = me_telas_controle;
+[e = . _tela 2 -> &U _me_telas_controle `*v ]
+"313
+[; ;meTELAS.c: 313:             tela.arg = me_tela_inserir_contrl_fila;
+[e = . _tela 1 -> &U _me_tela_inserir_contrl_fila `*v ]
+"314
+[; ;meTELAS.c: 314:             return( me_telas_controle );
+[e ) -> &U _me_telas_controle `*v ]
+[e $UE 423  ]
+"316
+[; ;meTELAS.c: 316:             break;
+[e $U 424  ]
+"317
+[; ;meTELAS.c: 317:     }
+}
+[e $U 424  ]
+[e :U 425 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 65 `ui `i 426
+ , $ -> -> 66 `ui `i 427
+ , $ -> -> 67 `ui `i 428
+ , $ -> -> 68 `ui `i 429
+ , $ -> -> 54 `ui `i 431
+ , $ -> -> 52 `ui `i 432
+ , $ -> -> 42 `ui `i 433
+ , $ -> -> 48 `ui `i 436
+ , $ -> -> 57 `ui `i 437
+ 424 ]
+[e :U 424 ]
+"319
+[; ;meTELAS.c: 319:     if ( get_tecla() == '#' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 35 `ui 438  ]
+"320
+[; ;meTELAS.c: 320:     {
+{
+"321
+[; ;meTELAS.c: 321:          tela.next = me_tela_salvar_seq;
+[e = . _tela 2 -> &U _me_tela_salvar_seq `*v ]
+"322
+[; ;meTELAS.c: 322:          return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 423  ]
+"323
+[; ;meTELAS.c: 323:     }
+}
+[e :U 438 ]
+"325
+[; ;meTELAS.c: 325:     return( me_telas_editar_passo );
+[e ) -> &U _me_telas_editar_passo `*v ]
+[e $UE 423  ]
+"326
+[; ;meTELAS.c: 326: }
+[e :UE 423 ]
+}
+"329
+[; ;meTELAS.c: 329: void * me_telas_tempo ( void * arg, void * next )
+[v _me_telas_tempo `(*v ~T0 @X0 1 ef2`*v`*v ]
+"330
+[; ;meTELAS.c: 330: {
+{
+[e :U _me_telas_tempo ]
+"329
+[; ;meTELAS.c: 329: void * me_telas_tempo ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"330
+[; ;meTELAS.c: 330: {
+[f ]
+"331
+[; ;meTELAS.c: 331:     IHM.printpos(2,0,"config tempo:      s");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 13C ]
+"332
+[; ;meTELAS.c: 332:     IHM.printv(2,15,numero,3);
+[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 15 `i `uc -> _numero `i -> -> 3 `i `uc ]
+"334
+[; ;meTELAS.c: 334:     return( me_telas_num_config );
+[e ) -> &U _me_telas_num_config `*v ]
+[e $UE 439  ]
+"335
+[; ;meTELAS.c: 335: }
+[e :UE 439 ]
+}
+"337
+[; ;meTELAS.c: 337: void *me_telas_controle (void * arg, void * next )
+[v _me_telas_controle `(*v ~T0 @X0 1 ef2`*v`*v ]
+"338
+[; ;meTELAS.c: 338: {
+{
+[e :U _me_telas_controle ]
+"337
+[; ;meTELAS.c: 337: void *me_telas_controle (void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"338
+[; ;meTELAS.c: 338: {
+[f ]
+"339
+[; ;meTELAS.c: 339:     IHM.printpos(2,0,"config contrl:     %");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 14C ]
+"340
+[; ;meTELAS.c: 340:     IHM.printv(2,15,numero,3);
+[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 15 `i `uc -> _numero `i -> -> 3 `i `uc ]
+"342
+[; ;meTELAS.c: 342:     return( me_telas_num_config );
+[e ) -> &U _me_telas_num_config `*v ]
+[e $UE 440  ]
+"343
+[; ;meTELAS.c: 343: }
+[e :UE 440 ]
+}
+"345
+[; ;meTELAS.c: 345: void *me_telas_num_config ( void * arg, void * next)
+[v _me_telas_num_config `(*v ~T0 @X0 1 ef2`*v`*v ]
+"346
+[; ;meTELAS.c: 346: {
+{
+[e :U _me_telas_num_config ]
+"345
+[; ;meTELAS.c: 345: void *me_telas_num_config ( void * arg, void * next)
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"346
+[; ;meTELAS.c: 346: {
+[f ]
+"348
+[; ;meTELAS.c: 348:     if ( get_tecla() >= '0' && get_tecla() <= '9' )
+[e $ ! && >= -> ( _get_tecla ..  `ui -> 48 `ui <= -> ( _get_tecla ..  `ui -> 57 `ui 442  ]
+"349
+[; ;meTELAS.c: 349:     {
+{
+"350
+[; ;meTELAS.c: 350:         dignum_conc( get_tecla(),&numero);
+[e ( _dignum_conc (2 , -> ( _get_tecla ..  `uc &U _numero ]
+"351
+[; ;meTELAS.c: 351:         if( numero > modo )
+[e $ ! > _numero -> _modo `ui 443  ]
+"352
+[; ;meTELAS.c: 352:             numero = modo ;
+[e = _numero -> _modo `ui ]
+[e :U 443 ]
+"353
+[; ;meTELAS.c: 353:             return( next );
+[e ) _next ]
+[e $UE 441  ]
+"355
+[; ;meTELAS.c: 355:     }
+}
+[e $U 444  ]
+"356
+[; ;meTELAS.c: 356:     else if ( get_tecla() == '*' )
+[e :U 442 ]
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 445  ]
+"357
+[; ;meTELAS.c: 357:     {
+{
+"358
+[; ;meTELAS.c: 358:         dignum_apagar(&numero);
+[e ( _dignum_apagar (1 &U _numero ]
+"359
+[; ;meTELAS.c: 359:         return( next );
+[e ) _next ]
+[e $UE 441  ]
+"360
+[; ;meTELAS.c: 360:     }
+}
+[e $U 446  ]
+"362
+[; ;meTELAS.c: 362:     else if ( get_tecla() == '#' )
+[e :U 445 ]
+[e $ ! == -> ( _get_tecla ..  `ui -> 35 `ui 447  ]
+"363
+[; ;meTELAS.c: 363:     {
+{
+"364
+[; ;meTELAS.c: 364:         modo = 0;
+[e = _modo -> -> 0 `i `uc ]
+"365
+[; ;meTELAS.c: 365:         return( arg );
+[e ) _arg ]
+[e $UE 441  ]
+"366
+[; ;meTELAS.c: 366:     }
+}
+[e :U 447 ]
+[e :U 446 ]
+[e :U 444 ]
+"368
+[; ;meTELAS.c: 368:     return( me_telas_num_config );
+[e ) -> &U _me_telas_num_config `*v ]
+[e $UE 441  ]
+"369
+[; ;meTELAS.c: 369: }
+[e :UE 441 ]
+}
+"371
+[; ;meTELAS.c: 371: void * me_tela_inserir_tempo_fila ( void * arg, void * next )
+[v _me_tela_inserir_tempo_fila `(*v ~T0 @X0 1 ef2`*v`*v ]
+"372
+[; ;meTELAS.c: 372: {
+{
+[e :U _me_tela_inserir_tempo_fila ]
+"371
+[; ;meTELAS.c: 371: void * me_tela_inserir_tempo_fila ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"372
+[; ;meTELAS.c: 372: {
+[f ]
+"373
+[; ;meTELAS.c: 373:     modo = 0;
+[e = _modo -> -> 0 `i `uc ]
+"374
+[; ;meTELAS.c: 374:     fifo_add_tempo(numero);
+[e ( _fifo_add_tempo (1 -> _numero `uc ]
+"375
+[; ;meTELAS.c: 375:     tela.next = me_telas_print_fifo;
+[e = . _tela 2 -> &U _me_telas_print_fifo `*v ]
+"376
+[; ;meTELAS.c: 376:     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 448  ]
+"377
+[; ;meTELAS.c: 377: }
+[e :UE 448 ]
+}
+"380
+[; ;meTELAS.c: 380: void * me_tela_inserir_contrl_fila ( void * arg, void * next )
+[v _me_tela_inserir_contrl_fila `(*v ~T0 @X0 1 ef2`*v`*v ]
+"381
+[; ;meTELAS.c: 381: {
+{
+[e :U _me_tela_inserir_contrl_fila ]
+"380
+[; ;meTELAS.c: 380: void * me_tela_inserir_contrl_fila ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"381
+[; ;meTELAS.c: 381: {
+[f ]
+"382
+[; ;meTELAS.c: 382:     modo = 0;
+[e = _modo -> -> 0 `i `uc ]
+"383
+[; ;meTELAS.c: 383:     fifo_add_control(numero);
+[e ( _fifo_add_control (1 -> _numero `uc ]
+"384
+[; ;meTELAS.c: 384:     tela.next = me_telas_print_fifo;
+[e = . _tela 2 -> &U _me_telas_print_fifo `*v ]
+"385
+[; ;meTELAS.c: 385:     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 449  ]
+"386
+[; ;meTELAS.c: 386: }
+[e :UE 449 ]
+}
+"388
+[; ;meTELAS.c: 388: void * me_telas_print_fifo ( void * arg, void * next )
+[v _me_telas_print_fifo `(*v ~T0 @X0 1 ef2`*v`*v ]
+"389
+[; ;meTELAS.c: 389: {
+{
+[e :U _me_telas_print_fifo ]
+"388
+[; ;meTELAS.c: 388: void * me_telas_print_fifo ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"389
+[; ;meTELAS.c: 389: {
+[f ]
+"390
+[; ;meTELAS.c: 390:     fifo_print();
+[e ( _fifo_print ..  ]
+"391
+[; ;meTELAS.c: 391:     return( me_telas_contar_passo );
+[e ) -> &U _me_telas_contar_passo `*v ]
+[e $UE 450  ]
+"392
+[; ;meTELAS.c: 392: }
+[e :UE 450 ]
+}
+"406
+[; ;meTELAS.c: 406: void * me_tela_memoria_ocupadas ( void * agr , void * next )
+[v _me_tela_memoria_ocupadas `(*v ~T0 @X0 1 ef2`*v`*v ]
+"407
+[; ;meTELAS.c: 407: {
+{
+[e :U _me_tela_memoria_ocupadas ]
+"406
+[; ;meTELAS.c: 406: void * me_tela_memoria_ocupadas ( void * agr , void * next )
+[v _agr `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"407
+[; ;meTELAS.c: 407: {
+[f ]
+"425
+[; ;meTELAS.c: 425:    tela.next = me_telas_buscar;
+[e = . _tela 2 -> &U _me_telas_buscar `*v ]
+"426
+[; ;meTELAS.c: 426:    return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 451  ]
+"427
+[; ;meTELAS.c: 427: }
+[e :UE 451 ]
+}
+"441
+[; ;meTELAS.c: 441: void * me_telas_buscar( void * arg, void * next )
+[v _me_telas_buscar `(*v ~T0 @X0 1 ef2`*v`*v ]
+"442
+[; ;meTELAS.c: 442: {
+{
+[e :U _me_telas_buscar ]
+"441
+[; ;meTELAS.c: 441: void * me_telas_buscar( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"442
+[; ;meTELAS.c: 442: {
+[f ]
+"443
+[; ;meTELAS.c: 443:     fifo_print_reset();
+[e ( _fifo_print_reset ..  ]
+"444
+[; ;meTELAS.c: 444:     IHM.printpos(0,0,"ESCOLHA MEMORIA QUE ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 15C ]
+"445
+[; ;meTELAS.c: 445:     IHM.printpos(1,0,"QUE DESEJA EXECUTAR ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 16C ]
+"447
+[; ;meTELAS.c: 447:     IHM.printpos(3,0,list);
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc &U _list ]
+"449
+[; ;meTELAS.c: 449:     tela.next = me_tela_buscar_tecla;
+[e = . _tela 2 -> &U _me_tela_buscar_tecla `*v ]
+"450
+[; ;meTELAS.c: 450:     return( me_telas_teclado );
+[e ) -> &U _me_telas_teclado `*v ]
+[e $UE 452  ]
+"451
+[; ;meTELAS.c: 451: }
+[e :UE 452 ]
+}
+"453
+[; ;meTELAS.c: 453: void * me_telas_teclado ( void * arg, void * next )
+[v _me_telas_teclado `(*v ~T0 @X0 1 ef2`*v`*v ]
+"454
+[; ;meTELAS.c: 454: {
+{
+[e :U _me_telas_teclado ]
+"453
+[; ;meTELAS.c: 453: void * me_telas_teclado ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"454
+[; ;meTELAS.c: 454: {
+[f ]
+"456
+[; ;meTELAS.c: 456:     teclado = 0;
+[e = _teclado -> -> 0 `i `uc ]
+"457
+[; ;meTELAS.c: 457:     switch ( get_tecla() )
+[e $U 455  ]
+"458
+[; ;meTELAS.c: 458:     {
+{
+"459
+[; ;meTELAS.c: 459:         case '0':
+[e :U 456 ]
+"460
+[; ;meTELAS.c: 460:         case '1':
+[e :U 457 ]
+"461
+[; ;meTELAS.c: 461:         case '2':
+[e :U 458 ]
+"462
+[; ;meTELAS.c: 462:         case '3':
+[e :U 459 ]
+"463
+[; ;meTELAS.c: 463:         case '4':
+[e :U 460 ]
+"464
+[; ;meTELAS.c: 464:         case '5':
+[e :U 461 ]
+"465
+[; ;meTELAS.c: 465:         case '6':
+[e :U 462 ]
+"466
+[; ;meTELAS.c: 466:         case '7':
+[e :U 463 ]
+"467
+[; ;meTELAS.c: 467:         case '8':
+[e :U 464 ]
+"468
+[; ;meTELAS.c: 468:         case '9':
+[e :U 465 ]
+"469
+[; ;meTELAS.c: 469:         case 'A':
+[e :U 466 ]
+"470
+[; ;meTELAS.c: 470:         case 'B':
+[e :U 467 ]
+"471
+[; ;meTELAS.c: 471:         case 'C':
+[e :U 468 ]
+"472
+[; ;meTELAS.c: 472:         case 'D':
+[e :U 469 ]
+"474
+[; ;meTELAS.c: 474:             teclado = get_tecla();
+[e = _teclado ( _get_tecla ..  ]
+"475
+[; ;meTELAS.c: 475:             teclado %= 0x30;
+[e =% _teclado -> 48 `i ]
+"476
+[; ;meTELAS.c: 476:             return( next );
+[e ) _next ]
+[e $UE 453  ]
+"478
+[; ;meTELAS.c: 478:         case '*':
+[e :U 470 ]
+"479
+[; ;meTELAS.c: 479:             return( me_telas_menu );
+[e ) -> &U _me_telas_menu `*v ]
+[e $UE 453  ]
+"480
+[; ;meTELAS.c: 480:             break;
+[e $U 454  ]
+"481
+[; ;meTELAS.c: 481:     }
+}
+[e $U 454  ]
+[e :U 455 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 48 `ui `i 456
+ , $ -> -> 49 `ui `i 457
+ , $ -> -> 50 `ui `i 458
+ , $ -> -> 51 `ui `i 459
+ , $ -> -> 52 `ui `i 460
+ , $ -> -> 53 `ui `i 461
+ , $ -> -> 54 `ui `i 462
+ , $ -> -> 55 `ui `i 463
+ , $ -> -> 56 `ui `i 464
+ , $ -> -> 57 `ui `i 465
+ , $ -> -> 65 `ui `i 466
+ , $ -> -> 66 `ui `i 467
+ , $ -> -> 67 `ui `i 468
+ , $ -> -> 68 `ui `i 469
+ , $ -> -> 42 `ui `i 470
+ 454 ]
+[e :U 454 ]
+"483
+[; ;meTELAS.c: 483:     return( me_telas_teclado );
+[e ) -> &U _me_telas_teclado `*v ]
+[e $UE 453  ]
+"484
+[; ;meTELAS.c: 484: }
+[e :UE 453 ]
+}
+"486
+[; ;meTELAS.c: 486: void * me_tela_buscar_tecla( void * arg, void * next)
+[v _me_tela_buscar_tecla `(*v ~T0 @X0 1 ef2`*v`*v ]
+"487
+[; ;meTELAS.c: 487: {
+{
+[e :U _me_tela_buscar_tecla ]
+"486
+[; ;meTELAS.c: 486: void * me_tela_buscar_tecla( void * arg, void * next)
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"487
+[; ;meTELAS.c: 487: {
+[f ]
+"488
+[; ;meTELAS.c: 488:     seq.buscarDado(12,teclado,&cond_inicial);
+[e ( *U . _seq 3 (3 , , -> -> 12 `i `uc -> _teclado `uc &U _cond_inicial ]
+"489
+[; ;meTELAS.c: 489:     manipula_atuadores_init( cond_inicial );
+[e ( _manipula_atuadores_init (1 -> _cond_inicial `uc ]
+"490
+[; ;meTELAS.c: 490:     seq.buscarReceita( teclado , vtr_aux );
+[e ( *U . _seq 1 (2 , _teclado &U _vtr_aux ]
+"492
+[; ;meTELAS.c: 492:     for( char * ptr = vtr_aux ; *ptr != 0; ptr ++ )
+{
+[v _ptr `*uc ~T0 @X0 1 a ]
+[e = _ptr -> &U _vtr_aux `*uc ]
+[e $U 475  ]
+[e :U 472 ]
+"493
+[; ;meTELAS.c: 493:     {
+{
+"494
+[; ;meTELAS.c: 494:         if( ( *ptr <= 0x64 || *ptr == 0xFE ))
+[e $ ! || <= -> *U _ptr `i -> 100 `i == -> *U _ptr `i -> 254 `i 476  ]
+"495
+[; ;meTELAS.c: 495:         {
+{
+"496
+[; ;meTELAS.c: 496:             decodifica( &*ptr );
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"497
+[; ;meTELAS.c: 497:             fifo_add_control( *ptr );
+[e ( _fifo_add_control (1 *U _ptr ]
+"498
+[; ;meTELAS.c: 498:         }
+}
+[e $U 477  ]
+"499
+[; ;meTELAS.c: 499:         else
+[e :U 476 ]
+"500
+[; ;meTELAS.c: 500:         if( ( *ptr > 0x64 && *ptr <= 0xDC ) )
+[e $ ! && > -> *U _ptr `i -> 100 `i <= -> *U _ptr `i -> 220 `i 478  ]
+"501
+[; ;meTELAS.c: 501:         {
+{
+"502
+[; ;meTELAS.c: 502:             decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"503
+[; ;meTELAS.c: 503:             fifo_add_tempo( *ptr );
+[e ( _fifo_add_tempo (1 *U _ptr ]
+"504
+[; ;meTELAS.c: 504:         }
+}
+[e $U 479  ]
+"505
+[; ;meTELAS.c: 505:         else
+[e :U 478 ]
+"506
+[; ;meTELAS.c: 506:         {
+{
+"507
+[; ;meTELAS.c: 507:             decodifica( &*ptr );
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"508
+[; ;meTELAS.c: 508:             switch( * ptr )
+[e $U 481  ]
+"509
+[; ;meTELAS.c: 509:             {
+{
+"510
+[; ;meTELAS.c: 510:                 case 'A':
+[e :U 482 ]
+"511
+[; ;meTELAS.c: 511:                 case 'B':
+[e :U 483 ]
+"512
+[; ;meTELAS.c: 512:                 case 'C':
+[e :U 484 ]
+"513
+[; ;meTELAS.c: 513:                 case 'D':
+[e :U 485 ]
+"514
+[; ;meTELAS.c: 514:                 case 'a':
+[e :U 486 ]
+"515
+[; ;meTELAS.c: 515:                 case 'b':
+[e :U 487 ]
+"516
+[; ;meTELAS.c: 516:                 case 'c':
+[e :U 488 ]
+"517
+[; ;meTELAS.c: 517:                 case 'd':
+[e :U 489 ]
+"518
+[; ;meTELAS.c: 518:                            *ptr &= ~0x20;
+[e =& *U _ptr -> ~ -> 32 `i `uc ]
+"519
+[; ;meTELAS.c: 519:                 break;
+[e $U 480  ]
+"520
+[; ;meTELAS.c: 520:             }
+}
+[e $U 480  ]
+[e :U 481 ]
+[e [\ -> *U _ptr `i , $ -> -> 65 `ui `i 482
+ , $ -> -> 66 `ui `i 483
+ , $ -> -> 67 `ui `i 484
+ , $ -> -> 68 `ui `i 485
+ , $ -> -> 97 `ui `i 486
+ , $ -> -> 98 `ui `i 487
+ , $ -> -> 99 `ui `i 488
+ , $ -> -> 100 `ui `i 489
+ 480 ]
+[e :U 480 ]
+"521
+[; ;meTELAS.c: 521:             alt_atuador( *ptr );
+[e ( _alt_atuador (1 *U _ptr ]
+"522
+[; ;meTELAS.c: 522:             fifo_add( ler_atuador( *ptr )? *ptr : *ptr|0x20 );
+[e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 *U _ptr `i -> 0 `i : -> *U _ptr `i | -> *U _ptr `i -> 32 `i `uc ]
+"523
+[; ;meTELAS.c: 523:         }
+}
+[e :U 479 ]
+[e :U 477 ]
+"524
+[; ;meTELAS.c: 524:     }
+}
+[e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[e :U 475 ]
+[e $ != -> *U _ptr `i -> 0 `i 472  ]
+[e :U 473 ]
+}
+"525
+[; ;meTELAS.c: 525:     tela.arg = me_tela_memoria_ocupadas;
+[e = . _tela 1 -> &U _me_tela_memoria_ocupadas `*v ]
+"526
+[; ;meTELAS.c: 526:     return ( me_telas_print_buscar );
+[e ) -> &U _me_telas_print_buscar `*v ]
+[e $UE 471  ]
+"527
+[; ;meTELAS.c: 527: }
+[e :UE 471 ]
+}
+"529
+[; ;meTELAS.c: 529: void * me_telas_print_buscar ( void * arg, void * next )
+[v _me_telas_print_buscar `(*v ~T0 @X0 1 ef2`*v`*v ]
+"530
+[; ;meTELAS.c: 530: {
+{
+[e :U _me_telas_print_buscar ]
+"529
+[; ;meTELAS.c: 529: void * me_telas_print_buscar ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"530
+[; ;meTELAS.c: 530: {
+[f ]
+"531
+[; ;meTELAS.c: 531:     IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"532
+[; ;meTELAS.c: 532:     IHM.printpos(3,0,"<  /  > ");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 17C ]
+"533
+[; ;meTELAS.c: 533:     IHM.printv(3, 1,( fifo_indice()-2), 2 );
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 1 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
+"534
+[; ;meTELAS.c: 534:     IHM.printv(3, 4,( fifo_tam()-2), 2 );
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 4 `i `uc - -> ( _fifo_tam ..  `i -> 2 `i -> -> 2 `i `uc ]
+"535
+[; ;meTELAS.c: 535:     fifo_print();
+[e ( _fifo_print ..  ]
+"537
+[; ;meTELAS.c: 537:      tela.next = me_tela_edit_ciclos;
+[e = . _tela 2 -> &U _me_tela_edit_ciclos `*v ]
+"538
+[; ;meTELAS.c: 538:      tela.arg = tela.arg;
+[e = . _tela 1 . _tela 1 ]
+"540
+[; ;meTELAS.c: 540:     return( go_comeback );
+[e ) -> &U _go_comeback `*v ]
+[e $UE 490  ]
+"541
+[; ;meTELAS.c: 541: }
+[e :UE 490 ]
+}
+"543
+[; ;meTELAS.c: 543: void * me_tela_salvar_seq (void * arg, void * next )
+[v _me_tela_salvar_seq `(*v ~T0 @X0 1 ef2`*v`*v ]
+"544
+[; ;meTELAS.c: 544: {
+{
+[e :U _me_tela_salvar_seq ]
+"543
+[; ;meTELAS.c: 543: void * me_tela_salvar_seq (void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"544
+[; ;meTELAS.c: 544: {
+[f ]
+"546
+[; ;meTELAS.c: 546:     IHM.printpos(0,4,"DESEJA SALVAR");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 4 `i `uc :s 18C ]
+"547
+[; ;meTELAS.c: 547:     IHM.printpos(1,5,"SEQUENCIA?");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 5 `i `uc :s 19C ]
+"548
+[; ;meTELAS.c: 548:     IHM.printpos(3,0,"# - SIM      * - NAO");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 20C ]
+"550
+[; ;meTELAS.c: 550:     if( get_tecla() == '#' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 35 `ui 492  ]
+"551
+[; ;meTELAS.c: 551:     {
+{
+"552
+[; ;meTELAS.c: 552:         tela.next = me_telas_verifica_memoria;
+[e = . _tela 2 -> &U _me_telas_verifica_memoria `*v ]
+"553
+[; ;meTELAS.c: 553:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 491  ]
+"554
+[; ;meTELAS.c: 554:     }
+}
+[e :U 492 ]
+"555
+[; ;meTELAS.c: 555:     if( get_tecla() == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 493  ]
+"556
+[; ;meTELAS.c: 556:     {
+{
+"557
+[; ;meTELAS.c: 557:         tela.next = me_tela_edit_ciclos;
+[e = . _tela 2 -> &U _me_tela_edit_ciclos `*v ]
+"558
+[; ;meTELAS.c: 558:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 491  ]
+"559
+[; ;meTELAS.c: 559:     }
+}
+[e :U 493 ]
+"561
+[; ;meTELAS.c: 561:     return( me_tela_salvar_seq );
+[e ) -> &U _me_tela_salvar_seq `*v ]
+[e $UE 491  ]
+"562
+[; ;meTELAS.c: 562: }
+[e :UE 491 ]
+}
+"564
+[; ;meTELAS.c: 564: void * me_telas_verifica_memoria ( void * arg, void * next )
+[v _me_telas_verifica_memoria `(*v ~T0 @X0 1 ef2`*v`*v ]
+"565
+[; ;meTELAS.c: 565: {
+{
+[e :U _me_telas_verifica_memoria ]
+"564
+[; ;meTELAS.c: 564: void * me_telas_verifica_memoria ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"565
+[; ;meTELAS.c: 565: {
+[f ]
+"566
+[; ;meTELAS.c: 566:     unsigned char cont = 0;
+[v _cont `uc ~T0 @X0 1 a ]
+[e = _cont -> -> 0 `i `uc ]
+"568
+[; ;meTELAS.c: 568:     seq.receitaLivre( aux );
+[e ( *U . _seq 5 (1 &U _aux ]
+"569
+[; ;meTELAS.c: 569:     for(char i = 0; i < 20; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 20 `i 495  ]
+[e $U 496  ]
+[e :U 495 ]
+"570
+[; ;meTELAS.c: 570:     {
+{
+"571
+[; ;meTELAS.c: 571:         if(list[2*i] == aux[i])
+[e $ ! == -> *U + &U _list * -> -> * -> 2 `i -> _i `i `ui `ux -> -> # *U &U _list `ui `ux `i -> *U + &U _aux * -> _i `ux -> -> # *U &U _aux `ui `ux `i 498  ]
+"572
+[; ;meTELAS.c: 572:             right[2*i] = list[2*i];
+[e = *U + &U _right * -> -> * -> 2 `i -> _i `i `ui `ux -> -> # *U &U _right `ui `ux -> *U + &U _list * -> -> * -> 2 `i -> _i `i `ui `ux -> -> # *U &U _list `ui `ux `uc ]
+[e $U 499  ]
+"573
+[; ;meTELAS.c: 573:         else
+[e :U 498 ]
+"574
+[; ;meTELAS.c: 574:             right[2*i] = '_';
+[e = *U + &U _right * -> -> * -> 2 `i -> _i `i `ui `ux -> -> # *U &U _right `ui `ux -> -> 95 `ui `uc ]
+[e :U 499 ]
+"576
+[; ;meTELAS.c: 576:         delay(1);
+[e ( _delay (1 -> -> 1 `i `ui ]
+"577
+[; ;meTELAS.c: 577:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 20 `i 495  ]
+[e :U 496 ]
+}
+"579
+[; ;meTELAS.c: 579:     for( char j = 0; j <20; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 20 `i 500  ]
+[e $U 501  ]
+[e :U 500 ]
+"580
+[; ;meTELAS.c: 580:     {
+{
+"581
+[; ;meTELAS.c: 581:         if( right[j] == '_')
+[e $ ! == -> *U + &U _right * -> _j `ux -> -> # *U &U _right `ui `ux `ui -> 95 `ui 503  ]
+"582
+[; ;meTELAS.c: 582:             cont++;
+[e ++ _cont -> -> 1 `i `uc ]
+[e :U 503 ]
+"584
+[; ;meTELAS.c: 584:         delay(1);
+[e ( _delay (1 -> -> 1 `i `ui ]
+"585
+[; ;meTELAS.c: 585:     }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 20 `i 500  ]
+[e :U 501 ]
+}
+"587
+[; ;meTELAS.c: 587:     if( cont > 9 )
+[e $ ! > -> _cont `i -> 9 `i 504  ]
+"588
+[; ;meTELAS.c: 588:     {
+{
+"589
+[; ;meTELAS.c: 589:         from = 2;
+[e = _from -> -> 2 `i `uc ]
+"590
+[; ;meTELAS.c: 590:         tela.next = me_tela_memoria_aviso;
+[e = . _tela 2 -> &U _me_tela_memoria_aviso `*v ]
+"591
+[; ;meTELAS.c: 591:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 494  ]
+"592
+[; ;meTELAS.c: 592:     }
+}
+[e $U 505  ]
+"593
+[; ;meTELAS.c: 593:     else
+[e :U 504 ]
+"594
+[; ;meTELAS.c: 594:     {
+{
+"595
+[; ;meTELAS.c: 595:         from = 1;
+[e = _from -> -> 1 `i `uc ]
+"596
+[; ;meTELAS.c: 596:         return( me_tela_memoria_escolha );
+[e ) -> &U _me_tela_memoria_escolha `*v ]
+[e $UE 494  ]
+"597
+[; ;meTELAS.c: 597:     }
+}
+[e :U 505 ]
+"599
+[; ;meTELAS.c: 599:     return( me_telas_verifica_memoria );
+[e ) -> &U _me_telas_verifica_memoria `*v ]
+[e $UE 494  ]
+"600
+[; ;meTELAS.c: 600: }
+[e :UE 494 ]
+}
+"602
+[; ;meTELAS.c: 602: void * me_tela_memoria_aviso ( void * arg, void * next )
+[v _me_tela_memoria_aviso `(*v ~T0 @X0 1 ef2`*v`*v ]
+"603
+[; ;meTELAS.c: 603: {
+{
+[e :U _me_tela_memoria_aviso ]
+"602
+[; ;meTELAS.c: 602: void * me_tela_memoria_aviso ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"603
+[; ;meTELAS.c: 603: {
+[f ]
+"604
+[; ;meTELAS.c: 604:     IHM.printpos(0,2,"MEMORIAS OCUPADAS!");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 2 `i `uc :s 21C ]
+"605
+[; ;meTELAS.c: 605:     IHM.printpos(1,2,"DESEJA SUBSCREVER");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 2 `i `uc :s 22C ]
+"606
+[; ;meTELAS.c: 606:     IHM.printpos(2,3,"ALGUMA MEMORIA?");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 3 `i `uc :s 23C ]
+"607
+[; ;meTELAS.c: 607:     IHM.printpos(3,0,"# - SIM      * - NAO");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 24C ]
+"609
+[; ;meTELAS.c: 609:     if( get_tecla() == '#' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 35 `ui 507  ]
+"610
+[; ;meTELAS.c: 610:     {
+{
+"611
+[; ;meTELAS.c: 611:         tela.next = me_tela_memoria_escolha;
+[e = . _tela 2 -> &U _me_tela_memoria_escolha `*v ]
+"612
+[; ;meTELAS.c: 612:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 506  ]
+"613
+[; ;meTELAS.c: 613:     }
+}
+[e :U 507 ]
+"614
+[; ;meTELAS.c: 614:     if( get_tecla() == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 508  ]
+"615
+[; ;meTELAS.c: 615:     {
+{
+"616
+[; ;meTELAS.c: 616:         tela.next = me_tela_edit_ciclos;
+[e = . _tela 2 -> &U _me_tela_edit_ciclos `*v ]
+"617
+[; ;meTELAS.c: 617:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 506  ]
+"618
+[; ;meTELAS.c: 618:     }
+}
+[e :U 508 ]
+"619
+[; ;meTELAS.c: 619:     return(me_tela_memoria_aviso);
+[e ) -> &U _me_tela_memoria_aviso `*v ]
+[e $UE 506  ]
+"620
+[; ;meTELAS.c: 620: }
+[e :UE 506 ]
+}
+"622
+[; ;meTELAS.c: 622: void * me_tela_memoria_escolha (void * arg, void * next )
+[v _me_tela_memoria_escolha `(*v ~T0 @X0 1 ef2`*v`*v ]
+"623
+[; ;meTELAS.c: 623: {
+{
+[e :U _me_tela_memoria_escolha ]
+"622
+[; ;meTELAS.c: 622: void * me_tela_memoria_escolha (void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"623
+[; ;meTELAS.c: 623: {
+[f ]
+"624
+[; ;meTELAS.c: 624:     switch ( from )
+[e $U 511  ]
+"625
+[; ;meTELAS.c: 625:     {
+{
+"626
+[; ;meTELAS.c: 626:         case 1 :IHM.printpos(3,0,right);
+[e :U 512 ]
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc -> &U _right `*Cuc ]
+"627
+[; ;meTELAS.c: 627:         return( me_tela_memoria_escolha_tecla );
+[e ) -> &U _me_tela_memoria_escolha_tecla `*v ]
+[e $UE 509  ]
+"628
+[; ;meTELAS.c: 628:         break;
+[e $U 510  ]
+"630
+[; ;meTELAS.c: 630:         case 2 :IHM.printpos(3,0,subscrever);
+[e :U 513 ]
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc &U _subscrever ]
+"631
+[; ;meTELAS.c: 631:         break;
+[e $U 510  ]
+"632
+[; ;meTELAS.c: 632:     }
+}
+[e $U 510  ]
+[e :U 511 ]
+[e [\ -> _from `i , $ -> 1 `i 512
+ , $ -> 2 `i 513
+ 510 ]
+[e :U 510 ]
+"633
+[; ;meTELAS.c: 633:     from = 0;
+[e = _from -> -> 0 `i `uc ]
+"634
+[; ;meTELAS.c: 634:     return( me_tela_memoria_escolha );
+[e ) -> &U _me_tela_memoria_escolha `*v ]
+[e $UE 509  ]
+"635
+[; ;meTELAS.c: 635: }
+[e :UE 509 ]
+}
+"637
+[; ;meTELAS.c: 637: void * me_tela_memoria_escolha_tecla( void * arg, void * next)
+[v _me_tela_memoria_escolha_tecla `(*v ~T0 @X0 1 ef2`*v`*v ]
+"638
+[; ;meTELAS.c: 638: {
+{
+[e :U _me_tela_memoria_escolha_tecla ]
+"637
+[; ;meTELAS.c: 637: void * me_tela_memoria_escolha_tecla( void * arg, void * next)
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"638
+[; ;meTELAS.c: 638: {
+[f ]
+"639
+[; ;meTELAS.c: 639:     IHM.printpos(0,0,"  ESCOLHA MEMORIA   ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 25C ]
+"640
+[; ;meTELAS.c: 640:     IHM.printpos(1,0," QUE DESEJA SALVAR  ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 26C ]
+"641
+[; ;meTELAS.c: 641:     IHM.printpos(2,0,"                 ");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 27C ]
+"644
+[; ;meTELAS.c: 644:     switch( get_tecla() )
+[e $U 516  ]
+"645
+[; ;meTELAS.c: 645:     {
+{
+"646
+[; ;meTELAS.c: 646:         case '0': case '1': case '2': case '3': case '4':
+[e :U 517 ]
+[e :U 518 ]
+[e :U 519 ]
+[e :U 520 ]
+[e :U 521 ]
+"647
+[; ;meTELAS.c: 647:         case '5': case '6': case '7': case '8': case '9':
+[e :U 522 ]
+[e :U 523 ]
+[e :U 524 ]
+[e :U 525 ]
+[e :U 526 ]
+"649
+[; ;meTELAS.c: 649:         salvar_dado(12, get_tecla() % 0x30, cond_inicial);
+[e ( _salvar_dado (3 , , -> -> 12 `i `uc -> % -> ( _get_tecla ..  `i -> 48 `i `uc _cond_inicial ]
+"650
+[; ;meTELAS.c: 650:         seq.salvarReceita(get_tecla() % 0x30, fifo_adrs() + 2);
+[e ( *U . _seq 0 (2 , -> % -> ( _get_tecla ..  `i -> 48 `i `uc -> + ( _fifo_adrs ..  * -> -> 2 `i `x -> -> # *U ( _fifo_adrs ..  `i `x `*uc ]
+"652
+[; ;meTELAS.c: 652:         tela.next = me_tela_memoria_salvando;
+[e = . _tela 2 -> &U _me_tela_memoria_salvando `*v ]
+"653
+[; ;meTELAS.c: 653:         return( me_telas_start );
+[e ) -> &U _me_telas_start `*v ]
+[e $UE 514  ]
+"654
+[; ;meTELAS.c: 654:         break;
+[e $U 515  ]
+"655
+[; ;meTELAS.c: 655:     }
+}
+[e $U 515  ]
+[e :U 516 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 48 `ui `i 517
+ , $ -> -> 49 `ui `i 518
+ , $ -> -> 50 `ui `i 519
+ , $ -> -> 51 `ui `i 520
+ , $ -> -> 52 `ui `i 521
+ , $ -> -> 53 `ui `i 522
+ , $ -> -> 54 `ui `i 523
+ , $ -> -> 55 `ui `i 524
+ , $ -> -> 56 `ui `i 525
+ , $ -> -> 57 `ui `i 526
+ 515 ]
+[e :U 515 ]
+"657
+[; ;meTELAS.c: 657:     return( me_tela_memoria_escolha_tecla);
+[e ) -> &U _me_tela_memoria_escolha_tecla `*v ]
+[e $UE 514  ]
+"658
+[; ;meTELAS.c: 658: }
+[e :UE 514 ]
+}
+"660
+[; ;meTELAS.c: 660: void * me_tela_memoria_salvando( void * arg, void * next )
+[v _me_tela_memoria_salvando `(*v ~T0 @X0 1 ef2`*v`*v ]
+"661
+[; ;meTELAS.c: 661: {
+{
+[e :U _me_tela_memoria_salvando ]
+"660
+[; ;meTELAS.c: 660: void * me_tela_memoria_salvando( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"661
+[; ;meTELAS.c: 661: {
+[f ]
+"662
+[; ;meTELAS.c: 662:     seq.buscarDado(12,12,cond_inicial);
+[e ( *U . _seq 3 (3 , , -> -> 12 `i `uc -> -> 12 `i `uc -> _cond_inicial `*uc ]
+"663
+[; ;meTELAS.c: 663:     seq.salvarReceita(13,fifo_adrs() + 2 );
+[e ( *U . _seq 0 (2 , -> -> 13 `i `uc -> + ( _fifo_adrs ..  * -> -> 2 `i `x -> -> # *U ( _fifo_adrs ..  `i `x `*uc ]
+"665
+[; ;meTELAS.c: 665:     IHM.printpos(0,6,"SEQUENCIA");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 6 `i `uc :s 28C ]
+"666
+[; ;meTELAS.c: 666:     IHM.printpos(1,8,"SALVA");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 8 `i `uc :s 29C ]
+"668
+[; ;meTELAS.c: 668:     setT1(200);
+[e ( _setT1 (1 -> -> -> 200 `i `l `ul ]
+"669
+[; ;meTELAS.c: 669:     tela.next = me_tela_edit_ciclos;
+[e = . _tela 2 -> &U _me_tela_edit_ciclos `*v ]
+"670
+[; ;meTELAS.c: 670:     tela.arg = me_telas_clean;
+[e = . _tela 1 -> &U _me_telas_clean `*v ]
+"671
+[; ;meTELAS.c: 671:     return( me_telas_delay );
+[e ) -> &U _me_telas_delay `*v ]
+[e $UE 527  ]
+"673
+[; ;meTELAS.c: 673: }
+[e :UE 527 ]
+}
+"675
+[; ;meTELAS.c: 675: void * me_tela_edit_ciclos( void * arg, void * next )
+[v _me_tela_edit_ciclos `(*v ~T0 @X0 1 ef2`*v`*v ]
+"676
+[; ;meTELAS.c: 676: {
+{
+[e :U _me_tela_edit_ciclos ]
+"675
+[; ;meTELAS.c: 675: void * me_tela_edit_ciclos( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"676
+[; ;meTELAS.c: 676: {
+[f ]
+"677
+[; ;meTELAS.c: 677:     IHM.printpos(0,0,"Ciclos:");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 30C ]
+"678
+[; ;meTELAS.c: 678:     IHM.printpos(3,0,"0 - Ciclo continuo");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 31C ]
+"679
+[; ;meTELAS.c: 679:     IHM.printv(0,15,ciclos,5);
+[e ( *U . _IHM 3 (4 , , , -> -> 0 `i `uc -> -> 15 `i `uc -> _ciclos `i -> -> 5 `i `uc ]
+"681
+[; ;meTELAS.c: 681:     return( me_tela_edit_ciclos_tecla );
+[e ) -> &U _me_tela_edit_ciclos_tecla `*v ]
+[e $UE 528  ]
+"682
+[; ;meTELAS.c: 682: }
+[e :UE 528 ]
+}
+"684
+[; ;meTELAS.c: 684: void * me_tela_edit_ciclos_tecla ( void * arg, void * next )
+[v _me_tela_edit_ciclos_tecla `(*v ~T0 @X0 1 ef2`*v`*v ]
+"685
+[; ;meTELAS.c: 685: {
+{
+[e :U _me_tela_edit_ciclos_tecla ]
+"684
+[; ;meTELAS.c: 684: void * me_tela_edit_ciclos_tecla ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"685
+[; ;meTELAS.c: 685: {
+[f ]
+"686
+[; ;meTELAS.c: 686:     if( ( get_tecla() >= '0' && get_tecla() <= '9'))
+[e $ ! && >= -> ( _get_tecla ..  `ui -> 48 `ui <= -> ( _get_tecla ..  `ui -> 57 `ui 530  ]
+"687
+[; ;meTELAS.c: 687:     {
+{
+"688
+[; ;meTELAS.c: 688:         dignum_conc( get_tecla(), &ciclos );
+[e ( _dignum_conc (2 , -> ( _get_tecla ..  `uc &U _ciclos ]
+"689
+[; ;meTELAS.c: 689:         if( ciclos > 10000 )
+[e $ ! > _ciclos -> -> 10000 `i `ui 531  ]
+"690
+[; ;meTELAS.c: 690:             ciclos = 10000;
+[e = _ciclos -> -> 10000 `i `ui ]
+[e :U 531 ]
+"691
+[; ;meTELAS.c: 691:         return( me_tela_edit_ciclos );
+[e ) -> &U _me_tela_edit_ciclos `*v ]
+[e $UE 529  ]
+"692
+[; ;meTELAS.c: 692:     }
+}
+[e :U 530 ]
+"694
+[; ;meTELAS.c: 694:     switch( get_tecla() )
+[e $U 533  ]
+"695
+[; ;meTELAS.c: 695:     {
+{
+"696
+[; ;meTELAS.c: 696:         case 'A':
+[e :U 534 ]
+"697
+[; ;meTELAS.c: 697:         case 'B':
+[e :U 535 ]
+"698
+[; ;meTELAS.c: 698:         case 'C':
+[e :U 536 ]
+"699
+[; ;meTELAS.c: 699:         case 'D':
+[e :U 537 ]
+"700
+[; ;meTELAS.c: 700:             tela.next = me_telas_print_fifo;
+[e = . _tela 2 -> &U _me_telas_print_fifo `*v ]
+"701
+[; ;meTELAS.c: 701:             return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 529  ]
+"702
+[; ;meTELAS.c: 702:             break;
+[e $U 532  ]
+"704
+[; ;meTELAS.c: 704:         case '*':
+[e :U 538 ]
+"706
+[; ;meTELAS.c: 706:             dignum_apagar(&ciclos);
+[e ( _dignum_apagar (1 &U _ciclos ]
+"707
+[; ;meTELAS.c: 707:             return( me_tela_edit_ciclos );
+[e ) -> &U _me_tela_edit_ciclos `*v ]
+[e $UE 529  ]
+"708
+[; ;meTELAS.c: 708:             break;
+[e $U 532  ]
+"710
+[; ;meTELAS.c: 710:         case '#':
+[e :U 539 ]
+"712
+[; ;meTELAS.c: 712:             btt = 1;
+[e = _btt -> -> 1 `i `uc ]
+"713
+[; ;meTELAS.c: 713:             return( me_tela_inserir_ciclo_fifo );
+[e ) -> &U _me_tela_inserir_ciclo_fifo `*v ]
+[e $UE 529  ]
+"714
+[; ;meTELAS.c: 714:             break;
+[e $U 532  ]
+"715
+[; ;meTELAS.c: 715:     }
+}
+[e $U 532  ]
+[e :U 533 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 65 `ui `i 534
+ , $ -> -> 66 `ui `i 535
+ , $ -> -> 67 `ui `i 536
+ , $ -> -> 68 `ui `i 537
+ , $ -> -> 42 `ui `i 538
+ , $ -> -> 35 `ui `i 539
+ 532 ]
+[e :U 532 ]
+"717
+[; ;meTELAS.c: 717:     return( me_tela_edit_ciclos_tecla );
+[e ) -> &U _me_tela_edit_ciclos_tecla `*v ]
+[e $UE 529  ]
+"718
+[; ;meTELAS.c: 718: }
+[e :UE 529 ]
+}
+"720
+[; ;meTELAS.c: 720: void * me_tela_inserir_ciclo_fifo ( void * arg, void * next )
+[v _me_tela_inserir_ciclo_fifo `(*v ~T0 @X0 1 ef2`*v`*v ]
+"721
+[; ;meTELAS.c: 721: {
+{
+[e :U _me_tela_inserir_ciclo_fifo ]
+"720
+[; ;meTELAS.c: 720: void * me_tela_inserir_ciclo_fifo ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"721
+[; ;meTELAS.c: 721: {
+[f ]
+"722
+[; ;meTELAS.c: 722:     fifo_add_ciclo(ciclos);
+[e ( _fifo_add_ciclo (1 _ciclos ]
+"723
+[; ;meTELAS.c: 723:     tela.next = me_tela_execucao;
+[e = . _tela 2 -> &U _me_tela_execucao `*v ]
+"724
+[; ;meTELAS.c: 724:     execucao.func = me_exec_init;
+[e = . _execucao 0 &U _me_exec_init ]
+"725
+[; ;meTELAS.c: 725:     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 540  ]
+"726
+[; ;meTELAS.c: 726: }
+[e :UE 540 ]
+}
+"728
+[; ;meTELAS.c: 728: void * me_tela_execucao (void * arg , void * next )
+[v _me_tela_execucao `(*v ~T0 @X0 1 ef2`*v`*v ]
+"729
+[; ;meTELAS.c: 729: {
+{
+[e :U _me_tela_execucao ]
+"728
+[; ;meTELAS.c: 728: void * me_tela_execucao (void * arg , void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"729
+[; ;meTELAS.c: 729: {
+[f ]
+"730
+[; ;meTELAS.c: 730:     IHM.printpos(0,0,"       [    ]       ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 32C ]
+"731
+[; ;meTELAS.c: 731:     IHM.printpos(2,10,"_ciclos_");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 10 `i `uc :s 33C ]
+"732
+[; ;meTELAS.c: 732:     IHM.printpos(3,0,"<  /  >   |        |");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 34C ]
+"734
+[; ;meTELAS.c: 734:     return( me_tela_execucao_print );
+[e ) -> &U _me_tela_execucao_print `*v ]
+[e $UE 541  ]
+"735
+[; ;meTELAS.c: 735:  }
+[e :UE 541 ]
+}
+"737
+[; ;meTELAS.c: 737: void * me_tela_execucao_print (void * arg , void * next )
+[v _me_tela_execucao_print `(*v ~T0 @X0 1 ef2`*v`*v ]
+"738
+[; ;meTELAS.c: 738: {
+{
+[e :U _me_tela_execucao_print ]
+"737
+[; ;meTELAS.c: 737: void * me_tela_execucao_print (void * arg , void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"738
+[; ;meTELAS.c: 738: {
+[f ]
+"739
+[; ;meTELAS.c: 739:     if( execucao.func != me_exec_principal )
+[e $ ! != . _execucao 0 &U _me_exec_principal 543  ]
+"740
+[; ;meTELAS.c: 740:     {
+{
+"741
+[; ;meTELAS.c: 741:        printExec(4,-1);
+[e ( _printExec (2 , -> -> 4 `i `uc -> -U -> 1 `i `uc ]
+"742
+[; ;meTELAS.c: 742:        printExec(9, 0);
+[e ( _printExec (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
+"743
+[; ;meTELAS.c: 743:        printExec(14,1);
+[e ( _printExec (2 , -> -> 14 `i `uc -> -> 1 `i `uc ]
+"745
+[; ;meTELAS.c: 745:        IHM.printv(3, 4, ( fifo_indice() - 2 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 4 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
+"746
+[; ;meTELAS.c: 746:        IHM.printv(3, 1, ( getIndicePassos() - 1 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 1 `i `uc - -> ( _getIndicePassos ..  `i -> 1 `i -> -> 2 `i `uc ]
+"747
+[; ;meTELAS.c: 747:        IHM.printv(3, 14,( getContCiclos() + 1 ), 5);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 14 `i `uc -> + ( _getContCiclos ..  -> -> 1 `i `ui `i -> -> 5 `i `uc ]
+"748
+[; ;meTELAS.c: 748:     }
+}
+[e :U 543 ]
+"750
+[; ;meTELAS.c: 750:    if( execucao.func == me_exec_principal && btt != 2 )
+[e $ ! && == . _execucao 0 &U _me_exec_principal != -> _btt `i -> 2 `i 544  ]
+"751
+[; ;meTELAS.c: 751:     {
+{
+"752
+[; ;meTELAS.c: 752:        IHM.printpos(0,0,"       [    ]       ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 35C ]
+"753
+[; ;meTELAS.c: 753:        IHM.printpos(1,0,"                    ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 36C ]
+"754
+[; ;meTELAS.c: 754:        printExec(4,-1);
+[e ( _printExec (2 , -> -> 4 `i `uc -> -U -> 1 `i `uc ]
+"755
+[; ;meTELAS.c: 755:        printExec(9, 0);
+[e ( _printExec (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
+"756
+[; ;meTELAS.c: 756:        printExec(14,1);
+[e ( _printExec (2 , -> -> 14 `i `uc -> -> 1 `i `uc ]
+"758
+[; ;meTELAS.c: 758:        IHM.printv(3, 4, ( fifo_indice() - 2 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 4 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
+"759
+[; ;meTELAS.c: 759:        IHM.printv(3, 1, ( getIndicePassos() - 1 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 1 `i `uc - -> ( _getIndicePassos ..  `i -> 1 `i -> -> 2 `i `uc ]
+"760
+[; ;meTELAS.c: 760:        IHM.printv(3, 14,( getContCiclos() + 1 ), 5);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 14 `i `uc -> + ( _getContCiclos ..  -> -> 1 `i `ui `i -> -> 5 `i `uc ]
+"761
+[; ;meTELAS.c: 761:     }
+}
+[e :U 544 ]
+"763
+[; ;meTELAS.c: 763:        switch( get_tecla())
+[e $U 546  ]
+"764
+[; ;meTELAS.c: 764:        {
+{
+"765
+[; ;meTELAS.c: 765:             case '#' :
+[e :U 547 ]
+"766
+[; ;meTELAS.c: 766:                 btt = 1;
+[e = _btt -> -> 1 `i `uc ]
+"767
+[; ;meTELAS.c: 767:                 break;
+[e $U 545  ]
+"769
+[; ;meTELAS.c: 769:             case '5' :
+[e :U 548 ]
+"770
+[; ;meTELAS.c: 770:                 btt = 2;
+[e = _btt -> -> 2 `i `uc ]
+"771
+[; ;meTELAS.c: 771:                 break;
+[e $U 545  ]
+"773
+[; ;meTELAS.c: 773:             case '0' :
+[e :U 549 ]
+"774
+[; ;meTELAS.c: 774:                 btt = 0;
+[e = _btt -> -> 0 `i `uc ]
+"775
+[; ;meTELAS.c: 775:                 break;
+[e $U 545  ]
+"777
+[; ;meTELAS.c: 777:             case '1' :
+[e :U 550 ]
+"778
+[; ;meTELAS.c: 778:              if( btt == 2)
+[e $ ! == -> _btt `i -> 2 `i 551  ]
+"779
+[; ;meTELAS.c: 779:                  btt = 3;
+[e = _btt -> -> 3 `i `uc ]
+[e :U 551 ]
+"780
+[; ;meTELAS.c: 780:                 break;
+[e $U 545  ]
+"781
+[; ;meTELAS.c: 781:         }
+}
+[e $U 545  ]
+[e :U 546 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 35 `ui `i 547
+ , $ -> -> 53 `ui `i 548
+ , $ -> -> 48 `ui `i 549
+ , $ -> -> 49 `ui `i 550
+ 545 ]
+[e :U 545 ]
+"783
+[; ;meTELAS.c: 783:     if( execucao.func == me_exec_vazio && btt == 0 )
+[e $ ! && == . _execucao 0 &U _me_exec_vazio == -> _btt `i -> 0 `i 552  ]
+"784
+[; ;meTELAS.c: 784:     {
+{
+"785
+[; ;meTELAS.c: 785:         tela.next = me_telas_cancelar_execucao;
+[e = . _tela 2 -> &U _me_telas_cancelar_execucao `*v ]
+"786
+[; ;meTELAS.c: 786:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 542  ]
+"787
+[; ;meTELAS.c: 787:     }
+}
+[e $U 553  ]
+"788
+[; ;meTELAS.c: 788:     else if( execucao.func == me_exec_vazio )
+[e :U 552 ]
+[e $ ! == . _execucao 0 &U _me_exec_vazio 554  ]
+"789
+[; ;meTELAS.c: 789:     {
+{
+"790
+[; ;meTELAS.c: 790:         tela.next = me_telas_print_fifo;
+[e = . _tela 2 -> &U _me_telas_print_fifo `*v ]
+"791
+[; ;meTELAS.c: 791:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 542  ]
+"792
+[; ;meTELAS.c: 792:     }
+}
+[e :U 554 ]
+[e :U 553 ]
+"794
+[; ;meTELAS.c: 794:     return( me_tela_execucao_print );
+[e ) -> &U _me_tela_execucao_print `*v ]
+[e $UE 542  ]
+"795
+[; ;meTELAS.c: 795: }
+[e :UE 542 ]
+}
+"797
+[; ;meTELAS.c: 797: void * me_telas_cancelar_execucao ( void * arg , void * next )
+[v _me_telas_cancelar_execucao `(*v ~T0 @X0 1 ef2`*v`*v ]
+"798
+[; ;meTELAS.c: 798: {
+{
+[e :U _me_telas_cancelar_execucao ]
+"797
+[; ;meTELAS.c: 797: void * me_telas_cancelar_execucao ( void * arg , void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"798
+[; ;meTELAS.c: 798: {
+[f ]
+"800
+[; ;meTELAS.c: 800:     IHM.printpos(0,1,"Deseja cancelar ?");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 1 `i `uc :s 37C ]
+"801
+[; ;meTELAS.c: 801:     IHM.printpos(3,0,"# - SIM      * - NAO");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 38C ]
+"803
+[; ;meTELAS.c: 803:     if( get_tecla() == '#' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 35 `ui 556  ]
+"804
+[; ;meTELAS.c: 804:     {
+{
+"805
+[; ;meTELAS.c: 805:         resetContCiclos();
+[e ( _resetContCiclos ..  ]
+"806
+[; ;meTELAS.c: 806:         resetIndicePassos();
+[e ( _resetIndicePassos ..  ]
+"807
+[; ;meTELAS.c: 807:         fifo_print_reset();
+[e ( _fifo_print_reset ..  ]
+"808
+[; ;meTELAS.c: 808:         tela.next = me_tela_inserir_passo;
+[e = . _tela 2 -> &U _me_tela_inserir_passo `*v ]
+"809
+[; ;meTELAS.c: 809:       return( me_telas_start );
+[e ) -> &U _me_telas_start `*v ]
+[e $UE 555  ]
+"811
+[; ;meTELAS.c: 811:     }
+}
+[e :U 556 ]
+"813
+[; ;meTELAS.c: 813:     if( get_tecla() == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 557  ]
+"814
+[; ;meTELAS.c: 814:     {
+{
+"815
+[; ;meTELAS.c: 815:         btt = 1;
+[e = _btt -> -> 1 `i `uc ]
+"816
+[; ;meTELAS.c: 816:         execucao.func = me_exec_init;
+[e = . _execucao 0 &U _me_exec_init ]
+"817
+[; ;meTELAS.c: 817:         tela.next = me_tela_execucao;
+[e = . _tela 2 -> &U _me_tela_execucao `*v ]
+"818
+[; ;meTELAS.c: 818:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 555  ]
+"819
+[; ;meTELAS.c: 819:     }
+}
+[e :U 557 ]
+"821
+[; ;meTELAS.c: 821:     return( me_telas_cancelar_execucao );
+[e ) -> &U _me_telas_cancelar_execucao `*v ]
+[e $UE 555  ]
+"822
+[; ;meTELAS.c: 822: }
+[e :UE 555 ]
+}
+"827
+[; ;meTELAS.c: 827: void * me_telas_repetir_ultima_seq( void * arg, void * next )
+[v _me_telas_repetir_ultima_seq `(*v ~T0 @X0 1 ef2`*v`*v ]
+"828
+[; ;meTELAS.c: 828: {
+{
+[e :U _me_telas_repetir_ultima_seq ]
+"827
+[; ;meTELAS.c: 827: void * me_telas_repetir_ultima_seq( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"828
+[; ;meTELAS.c: 828: {
+[f ]
+"830
+[; ;meTELAS.c: 830:     seq.buscarDado(12,12,&cond_inicial);
+[e ( *U . _seq 3 (3 , , -> -> 12 `i `uc -> -> 12 `i `uc &U _cond_inicial ]
+"831
+[; ;meTELAS.c: 831:     manipula_atuadores_init(cond_inicial);
+[e ( _manipula_atuadores_init (1 -> _cond_inicial `uc ]
+"832
+[; ;meTELAS.c: 832:     seq.buscarReceita(13,vtr_aux);
+[e ( *U . _seq 1 (2 , -> -> 13 `i `uc &U _vtr_aux ]
+"833
+[; ;meTELAS.c: 833:     ptr_aux = vtr_aux;
+[e = _ptr_aux &U _vtr_aux ]
+"835
+[; ;meTELAS.c: 835:     if( *ptr_aux == 0xFF )
+[e $ ! == -> *U _ptr_aux `i -> 255 `i 559  ]
+"836
+[; ;meTELAS.c: 836:     {
+{
+"837
+[; ;meTELAS.c: 837:         seq.deletarReceita(get_tecla() % 0x30 );
+[e ( *U . _seq 4 (1 -> % -> ( _get_tecla ..  `i -> 48 `i `uc ]
+"838
+[; ;meTELAS.c: 838:         vtr_aux[0] = 0;
+[e = *U + &U _vtr_aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _vtr_aux `ui `ux -> -> 0 `i `uc ]
+"839
+[; ;meTELAS.c: 839:     }
+}
+[e :U 559 ]
+"841
+[; ;meTELAS.c: 841:         for(char *ptr = vtr_aux ; *ptr != 0; ptr++)
+{
+[v _ptr `*uc ~T0 @X0 1 a ]
+[e = _ptr -> &U _vtr_aux `*uc ]
+[e $U 563  ]
+[e :U 560 ]
+"842
+[; ;meTELAS.c: 842:        {
+{
+"843
+[; ;meTELAS.c: 843:             if(*ptr <= 0x64 || *ptr == 0xFE)
+[e $ ! || <= -> *U _ptr `i -> 100 `i == -> *U _ptr `i -> 254 `i 564  ]
+"844
+[; ;meTELAS.c: 844:             {
+{
+"845
+[; ;meTELAS.c: 845:                 decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"846
+[; ;meTELAS.c: 846:                 fifo_add_control(*ptr);
+[e ( _fifo_add_control (1 *U _ptr ]
+"847
+[; ;meTELAS.c: 847:             }
+}
+[e $U 565  ]
+"848
+[; ;meTELAS.c: 848:             else if (*ptr > 0x64 && *ptr <= 0xDC)
+[e :U 564 ]
+[e $ ! && > -> *U _ptr `i -> 100 `i <= -> *U _ptr `i -> 220 `i 566  ]
+"849
+[; ;meTELAS.c: 849:             {
+{
+"850
+[; ;meTELAS.c: 850:                 decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"851
+[; ;meTELAS.c: 851:                 fifo_add_tempo(*ptr);
+[e ( _fifo_add_tempo (1 *U _ptr ]
+"852
+[; ;meTELAS.c: 852:             }
+}
+[e $U 567  ]
+"853
+[; ;meTELAS.c: 853:             else
+[e :U 566 ]
+"854
+[; ;meTELAS.c: 854:             {
+{
+"855
+[; ;meTELAS.c: 855:                 decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"856
+[; ;meTELAS.c: 856:                 switch( *ptr )
+[e $U 569  ]
+"857
+[; ;meTELAS.c: 857:                 {
+{
+"858
+[; ;meTELAS.c: 858:                     case 'A':
+[e :U 570 ]
+"859
+[; ;meTELAS.c: 859:                     case 'B':
+[e :U 571 ]
+"860
+[; ;meTELAS.c: 860:                     case 'C':
+[e :U 572 ]
+"861
+[; ;meTELAS.c: 861:                     case 'D':
+[e :U 573 ]
+"862
+[; ;meTELAS.c: 862:                     case 'a':
+[e :U 574 ]
+"863
+[; ;meTELAS.c: 863:                     case 'b':
+[e :U 575 ]
+"864
+[; ;meTELAS.c: 864:                     case 'c':
+[e :U 576 ]
+"865
+[; ;meTELAS.c: 865:                     case 'd':
+[e :U 577 ]
+"866
+[; ;meTELAS.c: 866:                               *ptr &= ~0x20;
+[e =& *U _ptr -> ~ -> 32 `i `uc ]
+"867
+[; ;meTELAS.c: 867:                                break;
+[e $U 568  ]
+"868
+[; ;meTELAS.c: 868:                 }
+}
+[e $U 568  ]
+[e :U 569 ]
+[e [\ -> *U _ptr `i , $ -> -> 65 `ui `i 570
+ , $ -> -> 66 `ui `i 571
+ , $ -> -> 67 `ui `i 572
+ , $ -> -> 68 `ui `i 573
+ , $ -> -> 97 `ui `i 574
+ , $ -> -> 98 `ui `i 575
+ , $ -> -> 99 `ui `i 576
+ , $ -> -> 100 `ui `i 577
+ 568 ]
+[e :U 568 ]
+"869
+[; ;meTELAS.c: 869:                 alt_atuador(*ptr);
+[e ( _alt_atuador (1 *U _ptr ]
+"870
+[; ;meTELAS.c: 870:                 fifo_add( ler_atuador(*ptr) ? *ptr : *ptr | 0x20 );
+[e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 *U _ptr `i -> 0 `i : -> *U _ptr `i | -> *U _ptr `i -> 32 `i `uc ]
+"871
+[; ;meTELAS.c: 871:             }
+}
+[e :U 567 ]
+[e :U 565 ]
+"872
+[; ;meTELAS.c: 872:             fifo_print();
+[e ( _fifo_print ..  ]
+"873
+[; ;meTELAS.c: 873:        }
+}
+[e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[e :U 563 ]
+[e $ != -> *U _ptr `i -> 0 `i 560  ]
+[e :U 561 ]
+}
+"874
+[; ;meTELAS.c: 874:       tela.next = me_telas_print_buscar;
+[e = . _tela 2 -> &U _me_telas_print_buscar `*v ]
+"875
+[; ;meTELAS.c: 875:       tela.arg = me_telas_menu;
+[e = . _tela 1 -> &U _me_telas_menu `*v ]
+"876
+[; ;meTELAS.c: 876:       return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 558  ]
+"877
+[; ;meTELAS.c: 877: }
+[e :UE 558 ]
+}
+"879
+[; ;meTELAS.c: 879: void * me_telas_config_menu( void * arg, void * next )
+[v _me_telas_config_menu `(*v ~T0 @X0 1 ef2`*v`*v ]
+"880
+[; ;meTELAS.c: 880: {
+{
+[e :U _me_telas_config_menu ]
+"879
+[; ;meTELAS.c: 879: void * me_telas_config_menu( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"880
+[; ;meTELAS.c: 880: {
+[f ]
+"881
+[; ;meTELAS.c: 881:     IHM.printpos(0,0,"1: VERIFICAR MEMORIA");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 39C ]
+"882
+[; ;meTELAS.c: 882:     IHM.printpos(1,0,"2: FORMATAR");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 40C ]
+"883
+[; ;meTELAS.c: 883:     IHM.printpos(2,0,"3: RESERVADO");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 41C ]
+"884
+[; ;meTELAS.c: 884:     IHM.printpos(3,0,"4: INF. DO FIRMWARE");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 42C ]
+"885
+[; ;meTELAS.c: 885:     return(me_telas_config_menu_tecla);
+[e ) -> &U _me_telas_config_menu_tecla `*v ]
+[e $UE 578  ]
+"886
+[; ;meTELAS.c: 886: }
+[e :UE 578 ]
+}
+"888
+[; ;meTELAS.c: 888: void * me_telas_config_menu_tecla( void * arg, void * next )
+[v _me_telas_config_menu_tecla `(*v ~T0 @X0 1 ef2`*v`*v ]
+"889
+[; ;meTELAS.c: 889: {
+{
+[e :U _me_telas_config_menu_tecla ]
+"888
+[; ;meTELAS.c: 888: void * me_telas_config_menu_tecla( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"889
+[; ;meTELAS.c: 889: {
+[f ]
+"890
+[; ;meTELAS.c: 890:     switch( get_tecla() )
+[e $U 581  ]
+"891
+[; ;meTELAS.c: 891:     {
+{
+"892
+[; ;meTELAS.c: 892:         case '1':
+[e :U 582 ]
+"893
+[; ;meTELAS.c: 893:                 tela.next = me_telas_config1_msg;
+[e = . _tela 2 -> &U _me_telas_config1_msg `*v ]
+"894
+[; ;meTELAS.c: 894:                 return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 579  ]
+"895
+[; ;meTELAS.c: 895:                 break;
+[e $U 580  ]
+"896
+[; ;meTELAS.c: 896:         case '2':
+[e :U 583 ]
+"897
+[; ;meTELAS.c: 897:                 tela.next = me_telas_config2_msg;
+[e = . _tela 2 -> &U _me_telas_config2_msg `*v ]
+"898
+[; ;meTELAS.c: 898:                 return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 579  ]
+"899
+[; ;meTELAS.c: 899:                 break;
+[e $U 580  ]
+"900
+[; ;meTELAS.c: 900:         case '3':
+[e :U 584 ]
+"901
+[; ;meTELAS.c: 901:                 tela.next = me_telas_config_terceiro;
+[e = . _tela 2 -> &U _me_telas_config_terceiro `*v ]
+"902
+[; ;meTELAS.c: 902:                 return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 579  ]
+"903
+[; ;meTELAS.c: 903:                 break;
+[e $U 580  ]
+"904
+[; ;meTELAS.c: 904:         case '4':
+[e :U 585 ]
+"905
+[; ;meTELAS.c: 905:                 tela.next = me_telas_config4_inf;
+[e = . _tela 2 -> &U _me_telas_config4_inf `*v ]
+"906
+[; ;meTELAS.c: 906:                 return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 579  ]
+"907
+[; ;meTELAS.c: 907:                 break;
+[e $U 580  ]
+"908
+[; ;meTELAS.c: 908:         case '*':
+[e :U 586 ]
+"909
+[; ;meTELAS.c: 909:                 tela.next = me_telas_menu;
+[e = . _tela 2 -> &U _me_telas_menu `*v ]
+"910
+[; ;meTELAS.c: 910:                 return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 579  ]
+"911
+[; ;meTELAS.c: 911:                 break;
+[e $U 580  ]
+"912
+[; ;meTELAS.c: 912:     }
+}
+[e $U 580  ]
+[e :U 581 ]
+[e [\ -> ( _get_tecla ..  `i , $ -> -> 49 `ui `i 582
+ , $ -> -> 50 `ui `i 583
+ , $ -> -> 51 `ui `i 584
+ , $ -> -> 52 `ui `i 585
+ , $ -> -> 42 `ui `i 586
+ 580 ]
+[e :U 580 ]
+"913
+[; ;meTELAS.c: 913:     return( me_telas_config_menu_tecla );
+[e ) -> &U _me_telas_config_menu_tecla `*v ]
+[e $UE 579  ]
+"914
+[; ;meTELAS.c: 914: }
+[e :UE 579 ]
+}
+"916
+[; ;meTELAS.c: 916: void *me_telas_config1_msg (void * arg, void * next )
+[v _me_telas_config1_msg `(*v ~T0 @X0 1 ef2`*v`*v ]
+"917
+[; ;meTELAS.c: 917: {
+{
+[e :U _me_telas_config1_msg ]
+"916
+[; ;meTELAS.c: 916: void *me_telas_config1_msg (void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"917
+[; ;meTELAS.c: 917: {
+[f ]
+"918
+[; ;meTELAS.c: 918:      fifo_print_reset();
+[e ( _fifo_print_reset ..  ]
+"919
+[; ;meTELAS.c: 919:      IHM.printpos(0,1,"ESCOLHA MEMORIA QUE");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 1 `i `uc :s 43C ]
+"920
+[; ;meTELAS.c: 920:      IHM.printpos(1,2,"DESEJA VERIFICAR");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 2 `i `uc :s 44C ]
+"921
+[; ;meTELAS.c: 921:      IHM.printpos(3,0,list);
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc &U _list ]
+"923
+[; ;meTELAS.c: 923:      tela.next = me_telas_config1_tecla;
+[e = . _tela 2 -> &U _me_telas_config1_tecla `*v ]
+"924
+[; ;meTELAS.c: 924:      return( me_telas_teclado );
+[e ) -> &U _me_telas_teclado `*v ]
+[e $UE 587  ]
+"925
+[; ;meTELAS.c: 925: }
+[e :UE 587 ]
+}
+"927
+[; ;meTELAS.c: 927: void * me_telas_config1_tecla ( void * arg, void * next )
+[v _me_telas_config1_tecla `(*v ~T0 @X0 1 ef2`*v`*v ]
+"928
+[; ;meTELAS.c: 928: {
+{
+[e :U _me_telas_config1_tecla ]
+"927
+[; ;meTELAS.c: 927: void * me_telas_config1_tecla ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"928
+[; ;meTELAS.c: 928: {
+[f ]
+"929
+[; ;meTELAS.c: 929:         seq.buscarDado(12,teclado , &cond_inicial );
+[e ( *U . _seq 3 (3 , , -> -> 12 `i `uc -> _teclado `uc &U _cond_inicial ]
+"930
+[; ;meTELAS.c: 930:         seq.buscarReceita( teclado , vtr_aux );
+[e ( *U . _seq 1 (2 , _teclado &U _vtr_aux ]
+"932
+[; ;meTELAS.c: 932:         for(char *ptr = vtr_aux ; *ptr != 0; ptr++)
+{
+[v _ptr `*uc ~T0 @X0 1 a ]
+[e = _ptr -> &U _vtr_aux `*uc ]
+[e $U 592  ]
+[e :U 589 ]
+"933
+[; ;meTELAS.c: 933:        {
+{
+"934
+[; ;meTELAS.c: 934:             if( ( *ptr <= 0x64 || *ptr == 0xFE ) )
+[e $ ! || <= -> *U _ptr `i -> 100 `i == -> *U _ptr `i -> 254 `i 593  ]
+"935
+[; ;meTELAS.c: 935:             {
+{
+"936
+[; ;meTELAS.c: 936:                 decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"937
+[; ;meTELAS.c: 937:                 fifo_add_control(*ptr);
+[e ( _fifo_add_control (1 *U _ptr ]
+"938
+[; ;meTELAS.c: 938:             }
+}
+[e $U 594  ]
+"939
+[; ;meTELAS.c: 939:             else if ( ( *ptr > 0x64 && *ptr <= 0xDC ) )
+[e :U 593 ]
+[e $ ! && > -> *U _ptr `i -> 100 `i <= -> *U _ptr `i -> 220 `i 595  ]
+"940
+[; ;meTELAS.c: 940:             {
+{
+"941
+[; ;meTELAS.c: 941:                 decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"942
+[; ;meTELAS.c: 942:                 fifo_add_tempo(*ptr);
+[e ( _fifo_add_tempo (1 *U _ptr ]
+"943
+[; ;meTELAS.c: 943:             }
+}
+[e $U 596  ]
+"944
+[; ;meTELAS.c: 944:             else
+[e :U 595 ]
+"945
+[; ;meTELAS.c: 945:             {
+{
+"946
+[; ;meTELAS.c: 946:                 decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"947
+[; ;meTELAS.c: 947:                 switch( *ptr )
+[e $U 598  ]
+"948
+[; ;meTELAS.c: 948:                 {
+{
+"949
+[; ;meTELAS.c: 949:                     case 'A':
+[e :U 599 ]
+"950
+[; ;meTELAS.c: 950:                     case 'B':
+[e :U 600 ]
+"951
+[; ;meTELAS.c: 951:                     case 'C':
+[e :U 601 ]
+"952
+[; ;meTELAS.c: 952:                     case 'D':
+[e :U 602 ]
+"953
+[; ;meTELAS.c: 953:                     case 'a':
+[e :U 603 ]
+"954
+[; ;meTELAS.c: 954:                     case 'b':
+[e :U 604 ]
+"955
+[; ;meTELAS.c: 955:                     case 'c':
+[e :U 605 ]
+"956
+[; ;meTELAS.c: 956:                     case 'd':
+[e :U 606 ]
+"957
+[; ;meTELAS.c: 957:                               *ptr &= ~0x20;
+[e =& *U _ptr -> ~ -> 32 `i `uc ]
+"958
+[; ;meTELAS.c: 958:                                break;
+[e $U 597  ]
+"959
+[; ;meTELAS.c: 959:                 }
+}
+[e $U 597  ]
+[e :U 598 ]
+[e [\ -> *U _ptr `i , $ -> -> 65 `ui `i 599
+ , $ -> -> 66 `ui `i 600
+ , $ -> -> 67 `ui `i 601
+ , $ -> -> 68 `ui `i 602
+ , $ -> -> 97 `ui `i 603
+ , $ -> -> 98 `ui `i 604
+ , $ -> -> 99 `ui `i 605
+ , $ -> -> 100 `ui `i 606
+ 597 ]
+[e :U 597 ]
+"960
+[; ;meTELAS.c: 960:                 alt_atuador(*ptr);
+[e ( _alt_atuador (1 *U _ptr ]
+"961
+[; ;meTELAS.c: 961:                 fifo_add( ler_atuador(*ptr) ? *ptr : *ptr | 0x20 );
+[e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 *U _ptr `i -> 0 `i : -> *U _ptr `i | -> *U _ptr `i -> 32 `i `uc ]
+"962
+[; ;meTELAS.c: 962:             }
+}
+[e :U 596 ]
+[e :U 594 ]
+"963
+[; ;meTELAS.c: 963:        }
+}
+[e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[e :U 592 ]
+[e $ != -> *U _ptr `i -> 0 `i 589  ]
+[e :U 590 ]
+}
+"965
+[; ;meTELAS.c: 965:     tela.next = me_telas_config1_exec;
+[e = . _tela 2 -> &U _me_telas_config1_exec `*v ]
+"966
+[; ;meTELAS.c: 966:     return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 588  ]
+"967
+[; ;meTELAS.c: 967: }
+[e :UE 588 ]
+}
+"969
+[; ;meTELAS.c: 969: void * me_telas_config1_exec (void * arg, void * next )
+[v _me_telas_config1_exec `(*v ~T0 @X0 1 ef2`*v`*v ]
+"970
+[; ;meTELAS.c: 970: {
+{
+[e :U _me_telas_config1_exec ]
+"969
+[; ;meTELAS.c: 969: void * me_telas_config1_exec (void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"970
+[; ;meTELAS.c: 970: {
+[f ]
+"971
+[; ;meTELAS.c: 971:       fifo_print();
+[e ( _fifo_print ..  ]
+"972
+[; ;meTELAS.c: 972:       IHM.printpos(3,0,"* - SAIR  # - APAGAR");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 45C ]
+"974
+[; ;meTELAS.c: 974:       if( get_tecla() == '#' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 35 `ui 608  ]
+"975
+[; ;meTELAS.c: 975:       {
+{
+"976
+[; ;meTELAS.c: 976:           seq.deletarReceita( teclado );
+[e ( *U . _seq 4 (1 -> _teclado `uc ]
+"977
+[; ;meTELAS.c: 977:           tela.next = me_telas_config1_excluir;
+[e = . _tela 2 -> &U _me_telas_config1_excluir `*v ]
+"978
+[; ;meTELAS.c: 978:           return( me_telas_start );
+[e ) -> &U _me_telas_start `*v ]
+[e $UE 607  ]
+"979
+[; ;meTELAS.c: 979:       }
+}
+[e :U 608 ]
+"980
+[; ;meTELAS.c: 980:       if( get_tecla() == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 609  ]
+"981
+[; ;meTELAS.c: 981:       {
+{
+"982
+[; ;meTELAS.c: 982:           tela.next = me_telas_config1_msg;
+[e = . _tela 2 -> &U _me_telas_config1_msg `*v ]
+"983
+[; ;meTELAS.c: 983:           return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 607  ]
+"984
+[; ;meTELAS.c: 984:       }
+}
+[e :U 609 ]
+"986
+[; ;meTELAS.c: 986:       return( me_telas_config1_exec );
+[e ) -> &U _me_telas_config1_exec `*v ]
+[e $UE 607  ]
+"987
+[; ;meTELAS.c: 987: }
+[e :UE 607 ]
+}
+"989
+[; ;meTELAS.c: 989: void * me_telas_config1_excluir ( void * arg, void * next )
+[v _me_telas_config1_excluir `(*v ~T0 @X0 1 ef2`*v`*v ]
+"990
+[; ;meTELAS.c: 990: {
+{
+[e :U _me_telas_config1_excluir ]
+"989
+[; ;meTELAS.c: 989: void * me_telas_config1_excluir ( void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"990
+[; ;meTELAS.c: 990: {
+[f ]
+"991
+[; ;meTELAS.c: 991:     IHM.printpos(0,2,"MEMORIA EXCLUIDA");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 2 `i `uc :s 46C ]
+"992
+[; ;meTELAS.c: 992:     setT1(200);
+[e ( _setT1 (1 -> -> -> 200 `i `l `ul ]
+"993
+[; ;meTELAS.c: 993:     tela.arg = me_telas_clean;
+[e = . _tela 1 -> &U _me_telas_clean `*v ]
+"994
+[; ;meTELAS.c: 994:     tela.next = me_telas_config1_msg;
+[e = . _tela 2 -> &U _me_telas_config1_msg `*v ]
+"995
+[; ;meTELAS.c: 995:     return( me_telas_delay );
+[e ) -> &U _me_telas_delay `*v ]
+[e $UE 610  ]
+"997
+[; ;meTELAS.c: 997: }
+[e :UE 610 ]
+}
+"1000
+[; ;meTELAS.c: 1000: void * me_telas_config2_msg(void * arg, void * next )
+[v _me_telas_config2_msg `(*v ~T0 @X0 1 ef2`*v`*v ]
+"1001
+[; ;meTELAS.c: 1001: {
+{
+[e :U _me_telas_config2_msg ]
+"1000
+[; ;meTELAS.c: 1000: void * me_telas_config2_msg(void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"1001
+[; ;meTELAS.c: 1001: {
+[f ]
+"1002
+[; ;meTELAS.c: 1002:     IHM.printpos(0,1,"CERTEZA QUE DESEJA");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 1 `i `uc :s 47C ]
+"1003
+[; ;meTELAS.c: 1003:     IHM.printpos(1,3,"DELETAR TODA A");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 3 `i `uc :s 48C ]
+"1004
+[; ;meTELAS.c: 1004:     IHM.printpos(2,6,"MEMORIA ?");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 6 `i `uc :s 49C ]
+"1005
+[; ;meTELAS.c: 1005:     IHM.printpos(3,0,"# - SIM      * - NAO");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 50C ]
+"1007
+[; ;meTELAS.c: 1007:     tela.next = me_telas_config2_exec;
+[e = . _tela 2 -> &U _me_telas_config2_exec `*v ]
+"1008
+[; ;meTELAS.c: 1008:     tela.arg = me_telas_config_menu;
+[e = . _tela 1 -> &U _me_telas_config_menu `*v ]
+"1009
+[; ;meTELAS.c: 1009:     return( go_comeback );
+[e ) -> &U _go_comeback `*v ]
+[e $UE 611  ]
+"1010
+[; ;meTELAS.c: 1010: }
+[e :UE 611 ]
+}
+"1013
+[; ;meTELAS.c: 1013: void * me_telas_config2_exec(void * arg, void * next )
+[v _me_telas_config2_exec `(*v ~T0 @X0 1 ef2`*v`*v ]
+"1014
+[; ;meTELAS.c: 1014: {
+{
+[e :U _me_telas_config2_exec ]
+"1013
+[; ;meTELAS.c: 1013: void * me_telas_config2_exec(void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"1014
+[; ;meTELAS.c: 1014: {
+[f ]
+"1015
+[; ;meTELAS.c: 1015:     char cont = 1;
+[v _cont `uc ~T0 @X0 1 a ]
+[e = _cont -> -> 1 `i `uc ]
+"1016
+[; ;meTELAS.c: 1016:     IHM.printpos(0,6,"LIMPANDO");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 6 `i `uc :s 51C ]
+"1018
+[; ;meTELAS.c: 1018:     for ( char i = 0; i < 17; i ++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 17 `i 613  ]
+[e $U 614  ]
+[e :U 613 ]
+"1019
+[; ;meTELAS.c: 1019:     {
+{
+"1021
+[; ;meTELAS.c: 1021:         seq.formatarMemoria(i * 16, ((i * 16) + 16) );
+[e ( *U . _seq 6 (2 , -> * -> _i `i -> 16 `i `uc -> + * -> _i `i -> 16 `i -> 16 `i `uc ]
+"1022
+[; ;meTELAS.c: 1022:         IHM.printpos(3, i , "\377");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> _i `uc :s 52C ]
+"1023
+[; ;meTELAS.c: 1023:         IHM.printv(3,16,i * 6.25 , 3);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 16 `i `uc -> * -> -> _i `i `d .6.25 `i -> -> 3 `i `uc ]
+"1024
+[; ;meTELAS.c: 1024:         dispLCD_dataReg('%');
+[e ( _dispLCD_dataReg (1 -> -> 37 `ui `uc ]
+"1025
+[; ;meTELAS.c: 1025:         delay(300);
+[e ( _delay (1 -> -> 300 `i `ui ]
+"1027
+[; ;meTELAS.c: 1027:         cont ++;
+[e ++ _cont -> -> 1 `i `uc ]
+"1028
+[; ;meTELAS.c: 1028:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 17 `i 613  ]
+[e :U 614 ]
+}
+"1031
+[; ;meTELAS.c: 1031:     if( cont > 15)
+[e $ ! > -> _cont `i -> 15 `i 616  ]
+"1032
+[; ;meTELAS.c: 1032:     {
+{
+"1033
+[; ;meTELAS.c: 1033:         tela.next = me_telas_config2_ready;
+[e = . _tela 2 -> &U _me_telas_config2_ready `*v ]
+"1034
+[; ;meTELAS.c: 1034:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 612  ]
+"1035
+[; ;meTELAS.c: 1035:     }
+}
+[e $U 617  ]
+"1036
+[; ;meTELAS.c: 1036:     else
+[e :U 616 ]
+"1037
+[; ;meTELAS.c: 1037:     {
+{
+"1038
+[; ;meTELAS.c: 1038:     return( me_telas_config2_exec );
+[e ) -> &U _me_telas_config2_exec `*v ]
+[e $UE 612  ]
+"1039
+[; ;meTELAS.c: 1039:     }
+}
+[e :U 617 ]
+"1040
+[; ;meTELAS.c: 1040: }
+[e :UE 612 ]
+}
+"1042
+[; ;meTELAS.c: 1042: void * me_telas_config2_ready(void * arg, void * next )
+[v _me_telas_config2_ready `(*v ~T0 @X0 1 ef2`*v`*v ]
+"1043
+[; ;meTELAS.c: 1043: {
+{
+[e :U _me_telas_config2_ready ]
+"1042
+[; ;meTELAS.c: 1042: void * me_telas_config2_ready(void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"1043
+[; ;meTELAS.c: 1043: {
+[f ]
+"1044
+[; ;meTELAS.c: 1044:     IHM.printpos(0,7,"LIMPEZA");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 7 `i `uc :s 53C ]
+"1045
+[; ;meTELAS.c: 1045:     IHM.printpos(1,6,"CONCLUIDA");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 6 `i `uc :s 54C ]
+"1047
+[; ;meTELAS.c: 1047:     setT1(200);
+[e ( _setT1 (1 -> -> -> 200 `i `l `ul ]
+"1049
+[; ;meTELAS.c: 1049:     tela.arg = me_telas_clean;
+[e = . _tela 1 -> &U _me_telas_clean `*v ]
+"1050
+[; ;meTELAS.c: 1050:     tela.next = me_telas_config_menu;
+[e = . _tela 2 -> &U _me_telas_config_menu `*v ]
+"1051
+[; ;meTELAS.c: 1051:     return( me_telas_delay );
+[e ) -> &U _me_telas_delay `*v ]
+[e $UE 618  ]
+"1052
+[; ;meTELAS.c: 1052: }
+[e :UE 618 ]
+}
+"1054
+[; ;meTELAS.c: 1054: void * me_telas_config_terceiro(void * arg, void * next )
+[v _me_telas_config_terceiro `(*v ~T0 @X0 1 ef2`*v`*v ]
+"1055
+[; ;meTELAS.c: 1055: {
+{
+[e :U _me_telas_config_terceiro ]
+"1054
+[; ;meTELAS.c: 1054: void * me_telas_config_terceiro(void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"1055
+[; ;meTELAS.c: 1055: {
+[f ]
+"1056
+[; ;meTELAS.c: 1056:     IHM.printpos(0,3,"RESERVADA PARA");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 3 `i `uc :s 55C ]
+"1057
+[; ;meTELAS.c: 1057:     IHM.printpos(1,3,"PROXIMA VERSAO");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 3 `i `uc :s 56C ]
+"1058
+[; ;meTELAS.c: 1058:     IHM.printpos(2,5,"DO FIRMWARE");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 5 `i `uc :s 57C ]
+"1060
+[; ;meTELAS.c: 1060:    if( get_tecla() == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 620  ]
+"1061
+[; ;meTELAS.c: 1061:    {
+{
+"1062
+[; ;meTELAS.c: 1062:         tela.next = me_telas_config_menu;
+[e = . _tela 2 -> &U _me_telas_config_menu `*v ]
+"1063
+[; ;meTELAS.c: 1063:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 619  ]
+"1064
+[; ;meTELAS.c: 1064:    }
+}
+[e :U 620 ]
+"1065
+[; ;meTELAS.c: 1065:     return( me_telas_config_terceiro );
+[e ) -> &U _me_telas_config_terceiro `*v ]
+[e $UE 619  ]
+"1066
+[; ;meTELAS.c: 1066: }
+[e :UE 619 ]
+}
+"1068
+[; ;meTELAS.c: 1068: void * me_telas_config4_inf (void * arg, void * next )
+[v _me_telas_config4_inf `(*v ~T0 @X0 1 ef2`*v`*v ]
+"1069
+[; ;meTELAS.c: 1069: {
+{
+[e :U _me_telas_config4_inf ]
+"1068
+[; ;meTELAS.c: 1068: void * me_telas_config4_inf (void * arg, void * next )
+[v _arg `*v ~T0 @X0 1 r1 ]
+[v _next `*v ~T0 @X0 1 r2 ]
+"1069
+[; ;meTELAS.c: 1069: {
+[f ]
+"1071
+[; ;meTELAS.c: 1071:     IHM.printpos(0,0,"MICRO : 18F4550(PIC)");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 58C ]
+"1072
+[; ;meTELAS.c: 1072:     IHM.printpos(1,0,"EEPROM:   256(bytes)");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 59C ]
+"1073
+[; ;meTELAS.c: 1073:     IHM.printpos(3,0,"VERSAO:      slp.v3 ");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 60C ]
+"1075
+[; ;meTELAS.c: 1075:     if( get_tecla() == '*' )
+[e $ ! == -> ( _get_tecla ..  `ui -> 42 `ui 622  ]
+"1076
+[; ;meTELAS.c: 1076:     {
+{
+"1077
+[; ;meTELAS.c: 1077:         tela.next = me_telas_config_menu;
+[e = . _tela 2 -> &U _me_telas_config_menu `*v ]
+"1078
+[; ;meTELAS.c: 1078:         return( me_telas_clean );
+[e ) -> &U _me_telas_clean `*v ]
+[e $UE 621  ]
+"1079
+[; ;meTELAS.c: 1079:     }
+}
+[e :U 622 ]
+"1080
+[; ;meTELAS.c: 1080:     return( me_telas_config4_inf );
+[e ) -> &U _me_telas_config4_inf `*v ]
+[e $UE 621  ]
+"1081
+[; ;meTELAS.c: 1081: }
+[e :UE 621 ]
+}
+[a 34C 60 32 32 47 32 32 62 32 32 32 124 32 32 32 32 32 32 32 32 124 0 ]
+[a 13C 99 111 110 102 105 103 32 116 101 109 112 111 58 32 32 32 32 32 32 115 0 ]
+[a 31C 48 32 45 32 67 105 99 108 111 32 99 111 110 116 105 110 117 111 0 ]
+[a 33C 95 99 105 99 108 111 115 95 0 ]
+[a 6C 51 58 32 82 69 80 69 84 73 82 32 85 76 84 46 32 83 69 81 85 0 ]
+[a 22C 68 69 83 69 74 65 32 83 85 66 83 67 82 69 86 69 82 0 ]
+[a 18C 68 69 83 69 74 65 32 83 65 76 86 65 82 0 ]
+[a 40C 50 58 32 70 79 82 77 65 84 65 82 0 ]
+[a 45C 42 32 45 32 83 65 73 82 32 32 35 32 45 32 65 80 65 71 65 82 0 ]
+[a 44C 68 69 83 69 74 65 32 86 69 82 73 70 73 67 65 82 0 ]
+[a 51C 76 73 77 80 65 78 68 79 0 ]
+[a 41C 51 58 32 82 69 83 69 82 86 65 68 79 0 ]
+[a 56C 80 82 79 88 73 77 65 32 86 69 82 83 65 79 0 ]
+[a 20C 35 32 45 32 83 73 77 32 32 32 32 32 32 42 32 45 32 78 65 79 0 ]
+[a 24C 35 32 45 32 83 73 77 32 32 32 32 32 32 42 32 45 32 78 65 79 0 ]
+[a 38C 35 32 45 32 83 73 77 32 32 32 32 32 32 42 32 45 32 78 65 79 0 ]
+[a 50C 35 32 45 32 83 73 77 32 32 32 32 32 32 42 32 45 32 78 65 79 0 ]
+[a 43C 69 83 67 79 76 72 65 32 77 69 77 79 82 73 65 32 81 85 69 0 ]
+[a 42C 52 58 32 73 78 70 46 32 68 79 32 70 73 82 77 87 65 82 69 0 ]
+[a 57C 68 79 32 70 73 82 77 87 65 82 69 0 ]
+[a 53C 76 73 77 80 69 90 65 0 ]
+[a 29C 83 65 76 86 65 0 ]
+[a 55C 82 69 83 69 82 86 65 68 65 32 80 65 82 65 0 ]
+[a 47C 67 69 82 84 69 90 65 32 81 85 69 32 68 69 83 69 74 65 0 ]
+[a 39C 49 58 32 86 69 82 73 70 73 67 65 82 32 77 69 77 79 82 73 65 0 ]
+[a 4C 49 58 32 73 78 83 69 82 73 82 32 83 69 81 85 69 78 67 73 65 0 ]
+[a 28C 83 69 81 85 69 78 67 73 65 0 ]
+[a 46C 77 69 77 79 82 73 65 32 69 88 67 76 85 73 68 65 0 ]
+[a 54C 67 79 78 67 76 85 73 68 65 0 ]
+[a 48C 68 69 76 69 84 65 82 32 84 79 68 65 32 65 0 ]
+[a 23C 65 76 71 85 77 65 32 77 69 77 79 82 73 65 63 0 ]
+[a 19C 83 69 81 85 69 78 67 73 65 63 0 ]
+[a 37C 68 101 115 101 106 97 32 99 97 110 99 101 108 97 114 32 63 0 ]
+[a 49C 77 69 77 79 82 73 65 32 63 0 ]
+[a 12C 60 32 32 47 32 32 62 0 ]
+[a 30C 67 105 99 108 111 115 58 0 ]
+[a 59C 69 69 80 82 79 77 58 32 32 32 50 53 54 40 98 121 116 101 115 41 0 ]
+[a 58C 77 73 67 82 79 32 58 32 49 56 70 52 53 53 48 40 80 73 67 41 0 ]
+[a 14C 99 111 110 102 105 103 32 99 111 110 116 114 108 58 32 32 32 32 32 37 0 ]
+[a 21C 77 69 77 79 82 73 65 83 32 79 67 85 80 65 68 65 83 33 0 ]
+[a 16C 81 85 69 32 68 69 83 69 74 65 32 69 88 69 67 85 84 65 82 32 0 ]
+[a 15C 69 83 67 79 76 72 65 32 77 69 77 79 82 73 65 32 81 85 69 32 0 ]
+[a 5C 50 58 32 66 85 83 67 65 82 32 83 69 81 85 69 78 67 73 65 32 0 ]
+[a 17C 60 32 32 47 32 32 62 32 0 ]
+[a 60C 86 69 82 83 65 79 58 32 32 32 32 32 32 115 108 112 46 118 51 32 0 ]
+[a 11C 32 32 73 78 83 73 82 65 32 79 83 32 80 65 83 83 79 83 32 32 0 ]
+[a 26C 32 81 85 69 32 68 69 83 69 74 65 32 83 65 76 86 65 82 32 32 0 ]
+[a 8C 32 32 32 65 74 85 83 84 69 32 79 32 73 78 73 67 73 79 32 32 0 ]
+[a 25C 32 32 69 83 67 79 76 72 65 32 77 69 77 79 82 73 65 32 32 32 0 ]
+[a 7C 52 58 32 67 79 78 70 73 71 85 82 65 67 79 69 83 32 32 32 32 0 ]
+[a 10C 32 32 32 65 32 32 32 66 32 32 32 67 32 32 32 68 32 32 32 32 0 ]
+[a 9C 32 32 32 32 32 68 79 32 83 73 83 84 69 77 65 32 32 32 32 32 0 ]
+[a 32C 32 32 32 32 32 32 32 91 32 32 32 32 93 32 32 32 32 32 32 32 0 ]
+[a 35C 32 32 32 32 32 32 32 91 32 32 32 32 93 32 32 32 32 32 32 32 0 ]
+[a 3C 32 32 32 32 32 32 83 69 71 71 73 84 32 32 32 32 32 32 32 32 0 ]
+[a 36C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 27C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 2C 32 0 ]
+[a 1C 18446744073709551615 0 ]
+[a 52C 18446744073709551615 0 ]
